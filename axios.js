@@ -5,9 +5,9 @@ const api = axios.create({
     //baseURL: 'https://celeirobike.ddns.net/',
     //baseURL: 'https://granlogprd.ddns.net/',
     //baseURL: 'https://grupofesta.ddns.net/',
-    baseURL: 'https://grupojpp.ddns.net/',
+    //baseURL: 'https://grupojpp.ddns.net/',
     //baseURL: 'https://jsalog.ddns.net/',
-    //baseURL: 'https://macrolub.ddns.net/',
+    baseURL: 'https://macrolub.ddns.net/',
     //baseURL: 'https://officetotaleconopro.ddns.net/',
     //baseURL: 'https://ogcomercial.ddns.net/',
 
