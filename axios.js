@@ -11,7 +11,6 @@ const api = axios.create({
     //baseURL: 'https://officetotaleconopro.ddns.net/',
     //baseURL: 'https://ogcomercial.ddns.net/',
 
-    
 
     headers: {
         "Access-Control-Allow-Origin": "*",
