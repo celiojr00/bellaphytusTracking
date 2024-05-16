@@ -17,7 +17,7 @@
               <h4 class="title">
                 <NuxtLink to="/page-about"><br> {{ notaSts.ocorrencia }}</NuxtLink>
               </h4>
-              <div class="text"> {{ notaSts.descricao }} </div>
+              <div class="text"> {{ notaSts.descricao }} <br> {{ notaSts.data }} </div>
             </div>
           </div>
         </div>

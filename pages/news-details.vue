@@ -22,7 +22,7 @@
 
 <script>
 import api from "../axios.js";
-import moment from "moment";
+import moment from 'moment';
 
 export default {
   data() {
@@ -76,28 +76,56 @@ export default {
       this.notaData = res.data[0]
       this.notaStatusData = res.data[1]
 
+
       if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
-        this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...'
+        this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
 
         if (this.notaStatusData.length > 0) {
           const maxSeqItem = this.notaStatusData[0];
-          this.descricaoMaxSeq = maxSeqItem.descricao;
+
+          let ultdescricao = maxSeqItem.descricao;
+          let lineBreakPosition = ultdescricao.indexOf('\n');
+
+          if (lineBreakPosition !== -1) {
+            this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+          } else {
+            this.descricaoMaxSeq = ultdescricao +
+                '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+          }
+
+          //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
         } else {
           this.descricaoMaxSeq = "Não encontrado.";
         }
 
         const item = this.notaData;
+        const maxSeqItem = this.notaStatusData[0];
         this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-        this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
-        console.log('teste >>' . this.dataEmissao);
+        //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
 
+        if( maxSeqItem.tipo === "Entrega"){
+          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+        } else {
+          this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+        }
+
+        console.log('maxSeqItem.tipo')
+        console.log(maxSeqItem.tipo)
 
       } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
         this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
 
         const item = this.notaData;
+        // const itemStt = this.notaStatusData;
         this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-        this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+        if( maxSeqItem.tipo === "Entrega"){
+          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+        } else {
+          this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+        }
 
       } else {
         this.statusEntrega = 'Documento não encontrado'

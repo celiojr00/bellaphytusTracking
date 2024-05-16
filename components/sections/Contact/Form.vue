@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 
-        <section class="tracking-section pull-down" style="margin-top: -45px; margin-bottom: 40px;">
+        <!-- <section class="tracking-section pull-down" style="margin-top: -45px; margin-bottom: 40px;">
           <div class="auto-container">
             <div class="outer-box">
               <div class="arrow-box wow fadeInRight">
@@ -13,7 +13,7 @@
               </div>
               <div class="tracking-form">
                 <h4 class="title">Rastreie <br>Seu Pedido</h4>
-                <!-- Tracking Form -->
+                !-- Tracking Form --
                 <form method="post" :action="`/?ch=${chaveNota}`">
                   <div class="row">
                     <div class="form-group col-lg-8 col-md-12 col-sm-12">
@@ -26,15 +26,15 @@
                     </div>
                   </div>
                 </form>
-                <!-- End Tracking Form -->
+                
               </div>
             </div>
           </div>
-        </section>
+        </section>-->
         <!--<div class="imagem" style="display: flex; align-items: center; ">
             <img src="/images/caminhao1.png" style="max-width: 500px; position: relative; margin-left: 95ch; margin-top: -25ch;" alt="">
         </div>-->
-        <div class="col-xl-7 col-lg-6" style="margin-top: 80px;">
+        <div class="col-xl-5 col-lg-6" style="margin-top: 10px;">
           <div class="sec-title">
             <span class="sub-title">Informações do documento</span>
             <h2>Favor inserir </h2>
@@ -45,12 +45,12 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="mb-3">
-                  <span style="color: black">CNPJ Destinatário <small style= "color: red">campo obrigatório*</small></span>
+                  <span style="color: black">CNPJ/CPF Destinatário <small style= "color: red">campo obrigatório*</small></span>
                   <input name="cnpj"
                          v-model="cnpj"
                          class="form-control"
                          type="text"
-                         placeholder="CNPJ Destinatário" />
+                         placeholder="CNPJ/CPF Destinatário" />
                 </div>
               </div>
 <!--              <div class="col-sm-6">-->
@@ -97,7 +97,7 @@
 
 
 
-        <div class="col-xl-5 col-lg-6" style="margin-top: 80px;">
+        <div class="col-xl-7 col-lg-6" style="margin-top: 80px;">
 
           <div class="text-center">
 
@@ -111,7 +111,7 @@
 
             <div v-if="!updating">
 
-              <ul class="list-unstyled contact-details__info">
+<!--              <ul class="list-unstyled contact-details__info">
 
                 <li v-for="nota in dataListNotas"
                     :key="nota.id">
@@ -120,13 +120,43 @@
                         <span class="icon lnr-icon-file-archive theme-btn" style="background-color: rgb(240, 109, 62)"></span>
                       </NuxtLink>
                     </div>
-                    <div class="text">
-                      <NuxtLink :to="`/?idmov=${nota.id}`">
-                        <h6 style=" color: rgb(240, 109, 62)">{{ nota.codigo }}</h6>
-                        <span>{{ formatDateTime(nota.dtemissao) }}</span>
-                        <span> - R$ {{ formatDecimal(nota.valorliq) }} </span>
-                        <br>
-                      </NuxtLink>
+                    <div class="text col-xl-9">
+                        <div class="d-flex col-xl-12">
+                          <h6 style=" color: rgb(240, 109, 62)" class="col-xl-4">NF {{ nota.codigo }}</h6>
+                          <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7"> Valor de Nota: R$ {{ formatDecimal(nota.valorliq) }}</p><br>
+                        </div>
+
+                      <div class="d-flex">
+                        <div>
+                          <span style="font-size: 16px">Nome: {{nota.remet_nome}} </span>
+                          <p style="font-size: 13px">Dt Emissão: {{ formatDateTime(nota.dtemissao) }}</p>
+                        </div>
+                        <div style=" margin-left: 3ch">
+                          <span  style="font-size: 16px;">Status: {{nota.obsentr}}</span>
+                          <p style="font-size: 13px">Dt Status: {{ formatDateTime(nota.dtultocor)}}</p>
+                        </div>
+                      </div>
+
+                      <div>
+                      </div>
+
+                      <table style="width: 100%; border: 1px solid black;">
+                        <thead>
+                        <tr style=" border: 1px solid black;">
+                          <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Itens do Pedido</th>
+                        </tr>
+                        <tr>
+                          <th class="texto_header_white_1" style="min-width: 50%; text-align: left;border: 1px solid black; padding-left: 2ch;">Produto</th>
+                          <th class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">Quant.</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="nota in dataListNotas" :key="nota.id">
+                          <td class="texto_header_white_1" style="min-width: 50%; text-align: left;  border: 1px solid black; padding-left: 2ch;">{{ nota.descprod }}</td>
+                          <td class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">{{ formatInteger(nota.qtd) }}</td>
+                        </tr>
+                        </tbody>
+                      </table>
                     </div>
                 </li>
 
@@ -139,38 +169,65 @@
   									<NuxtLink to="tel:980089850"><span></span> Número {{ numnota }} | CNPJ: {{ cnpj }}</NuxtLink>
   								</div>
   							</li>
+              </ul>-->
 
+              <ul class="list-unstyled contact-details__info">
+                <li v-for="nota in dataListNotas" :key="nota.id">
+<!--                  <div class="icon">
+                    <NuxtLink :to="`/?idmov=${nota.id}`">
+                      <span class="icon lnr-icon-file-archive theme-btn" style="background-color: rgb(240, 109, 62);"></span>
+                    </NuxtLink>
+                  </div>-->
+                  <div class="text col-xl-9">
+                    <div class="d-flex col-xl-12">
+                      <div class="col-xl-4">
+                        <NuxtLink :to="`/?idmov=${nota.id}`">
+                          <h6 style=" color: rgb(240, 109, 62)" ><i class="lnr-icon-file-archive" style="font-size: 20px; margin-right: 10px"> </i>NF {{ nota.codigo }}</h6>
+                        </NuxtLink>
+                      </div>
+                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7"> Valor de Nota: R$ {{ formatDecimal(nota.valorliq) }}</p><br>
+                    </div>
+                    <div class="d-flex">
+                      <div>
+                        <span style="font-size: 16px">Nome: {{nota.remet_nome}} </span>
+                        <p style="font-size: 13px">Dt Emissão: {{ formatDateTime(nota.dtemissao) }}</p>
+                      </div>
+                      <div style=" margin-left: 3ch">
+                        <span  style="font-size: 16px;">Status: {{nota.obsentr}}</span>
+                        <p style="font-size: 13px">Dt Status: {{ formatDateTime(nota.dtultocor)}}</p>
+                      </div>
+                    </div>
 
-  <!--							-->
-  <!--              <li>-->
-  <!--								<div class="icon">-->
-  <!--									<span class="lnr-icon-envelope1"></span>-->
-  <!--								</div>-->
-  <!--								<div class="text">-->
-  <!--									<h6>Write email</h6>-->
-  <!--									<NuxtLink to="mailto:needhelp@company.com">needhelp@company.com</NuxtLink>-->
-  <!--								</div>-->
-  <!--							</li>-->
-  <!--							-->
-  <!--              <li>-->
-  <!--								<div class="icon">-->
-  <!--									<span class="lnr-icon-location"></span>-->
-  <!--								</div>-->
-  <!--								<div class="text">-->
-  <!--									<h6>Visit anytime</h6>-->
-  <!--									<span>66 broklyn golden street. New York</span>-->
-  <!--								</div>-->
-  <!--							</li>-->
-
-
+                    <div class=" mb-2">
+<!--                      <span  style="font-size: 16px;">Transp.: {{nota.transportadora}}</span>-->
+                      <NuxtLink :to="`https://www.jadlog.com.br/tracking?cpf=${nota.remet_cpf}`" target="_blank" title="Tracking">
+                        <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
+                        <button style="border: none; background: none; cursor: pointer;">
+                          <i class="fas fa-external-link-alt font-size-14" style="color: #0a267a; margin-left: 15px;"></i>
+                        </button>
+                      </NuxtLink>
+<!--                      https://www.jadlog.com.br/tracking?cpf=-->
+                    </div>
+                    <table style="width: 100%; border: 1px solid black;">
+                      <thead>
+                      <tr style=" border: 1px solid black;">
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Itens do Pedido</th>
+                      </tr>
+                      <tr>
+                        <th class="texto_header_white_1" style="min-width: 50%; text-align: left;border: 1px solid black; padding-left: 2ch;">Produto</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">Quant.</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left;  border: 1px solid black; padding-left: 2ch;">{{ nota.descprod }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">{{ formatInteger(nota.qtd) }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
               </ul>
-
-
-
-              <!--<div class="sec-title mt-5" v-if="dataListNotas">
-                <span class="sub-title">Ainda precisa de ajuda?</span>
-                <h2>Entre em contato</h2>
-             </div>-->
 
             </div>
 
@@ -333,7 +390,15 @@ export default {
         return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 2});
       }
       return 0.00;
-    }
+    },
+
+    formatInteger(value) {
+      if (value) {
+        let value_n = parseFloat(value)
+        return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 0});
+      }
+      return 0.00;
+    },
 
   }
 
