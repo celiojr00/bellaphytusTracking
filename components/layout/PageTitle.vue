@@ -15,7 +15,6 @@
                   <li><NuxtLink to="/track-nota">Tracking</NuxtLink></li>
                   <li>{{ title }}</li>
               </ul>
-
           </div>
       </div>
     </div>
