@@ -45,7 +45,7 @@
           </form>
         </div>
 
-        <div class="col-xl-7 col-lg-6" style="margin-top: 80px;">
+        <div class="col-xl-7 col-lg-6" style="margin-top: 80px; ">
           <div class="text-center">
             <loading v-model:active="updating"
                      :can-cancel="false"
@@ -66,14 +66,14 @@
                       </div>
                       <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7"> Valor de Nota: R$ {{ formatDecimal(nota.valorliq) }}</p><br>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex" style=" color: #333;">
                       <div>
                         <span style="font-size: 16px">Nome: {{nota.remet_nome}} </span>
-                        <p style="font-size: 13px">Dt Emissão: {{ formatDateTime(nota.dtemissao) }}</p>
+                        <p style="font-size: 13px; color: #333;">Dt. Emissão: {{ formatDateTime(nota.dtemissao) }}</p>
                       </div>
-                      <div style=" margin-left: 3ch">
+                      <div style=" margin-left: 3ch;">
                         <span  style="font-size: 16px;">Status: {{nota.obsentr}}</span>
-                        <p style="font-size: 13px">Dt Status: {{ formatDateTime(nota.dtultocor)}}</p>
+                        <p style="font-size: 13px; color: #333;">Dt. Status: {{ formatDateTime(nota.dtultocor)}}</p>
                       </div>
                     </div>
 
@@ -95,14 +95,17 @@
                         </button>
                       </NuxtLink>
                     </div>
-                    <table style="width: 100%; border: 1px solid black;">
+
+                    <table style="width: 100%; border: 1px solid black; color: #333;">
                       <thead>
                       <tr style=" border: 1px solid black;">
-                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Itens do Pedido</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; color: white;background-color: #ec5d18; font-size: 18px" colspan="2">
+                          Itens do Pedido
+                        </th>
                       </tr>
-                      <tr>
+                      <tr style="background-color: #dde1e5; color: #333;">
                         <th class="texto_header_white_1" style="min-width: 50%; text-align: left;border: 1px solid black; padding-left: 2ch;">Produto</th>
-                        <th class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">Quant.</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black; padding: 0px 3px">Quant.</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -119,6 +122,62 @@
 					</div>
 				</div>
 			</div>
+      <div class="row">
+        <div class="col-xl-11 col-lg-8" style="margin-top: 80px;">
+          <div class="text-center">
+            <loading v-model:active="updating"
+                     :can-cancel="false"
+                     :is-full-page="false"/>
+          </div>
+
+          <div>
+            <div v-if="!updating">
+
+
+                  <div class="text col-xl-12">
+                    <table style="width: 100%; border: 1px solid black;">
+                      <thead>
+                      <tr style=" border: 1px solid black;">
+                        <th class="texto_header_white_1" style="min-width: 100px; color: white;background-color: #ec5d18; font-size: 24px;
+                          text-align: center;" colspan="4">
+                          Rastreio do Pedido
+                        </th>
+                      </tr>
+
+                      <tr style=" border: 1px solid black; background-color: #dde1e5; color: #333; line-height: 2.5;">
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Dt. Emissão: {{ dataEmissao }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black;" colspan="2">
+                          Status de Entrega: {{ statusEntrega }}</th>
+                      </tr>
+
+                      <tr style=" border: 1px solid black;color: #333; text-align: center;">
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0px 30px">Seq.</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black;">Data</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Ocorrência</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Descrição</th>
+
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr v-for="notaSts in notaStatusData"
+                          :key="notaSts.id">
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">
+                          <i :class=" notaSts.tipo === 'Entrega' ? 'icon flaticon-checklist'
+                                    : notaSts.tipo === 'Pre-Entrega' ? 'icon flaticon-checklist'
+                                    : notaSts.tipo === 'Cliente' ? 'icon flaticon-logistics-delivery-6' : 'icon flaticon-shipping-2'"></i>
+                          <span class="count"> {{ notaSts.seq }}</span></td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">{{ notaSts.data }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.ocorrencia }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.descricao }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 		</div>
 	</section>
 </template>
@@ -141,6 +200,10 @@ export default {
   data() {
     return {
       updating: false,
+      statusEntrega: '',
+      notaData: null,
+      notaStatusData: null,
+      dataEmissao:'',
       dataListNotas: null,
       chaveNota: null,
       numnota: '',
@@ -150,7 +213,8 @@ export default {
 
   mounted() {
 
-
+    console.log('this.notaStatusData')
+    console.log(this.notaStatusData)
 
 
     // let instance = this.$toast.open('You did it!');
@@ -186,6 +250,8 @@ export default {
           console.log('then axios rastreio nfsAbe')
           console.log(res.data)
           this.dataListNotas = res.data[0]
+          this.notaData = res.data[1]
+          this.notaStatusData = res.data[2]
 
           console.log('dataListNotas')
           console.log(this.dataListNotas)
@@ -198,6 +264,67 @@ export default {
               duration: 3000
             })
           }
+
+          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+
+            if (this.notaStatusData.length > 0) {
+              const maxSeqItem = this.notaStatusData[0];
+
+              let ultdescricao = maxSeqItem.descricao;
+              let lineBreakPosition = ultdescricao.indexOf('\n');
+
+              if (lineBreakPosition !== -1) {
+                this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              } else {
+                this.descricaoMaxSeq = ultdescricao +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              }
+
+              //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
+            } else {
+              this.descricaoMaxSeq = "Não encontrado.";
+            }
+
+            const item = this.notaData;
+            const maxSeqItem = this.notaStatusData[0];
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+            console.log('maxSeqItem.tipo')
+            console.log(maxSeqItem.tipo)
+
+          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
+            const item = this.notaData;
+            // const itemStt = this.notaStatusData;
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+          } else {
+            this.statusEntrega = 'Documento não encontrado'
+          }
+
+          let contSeq = 0
+          this.notaStatusData.forEach((value) => {
+            value['seq'] = this.notaStatusData.length - contSeq
+            contSeq++
+          })
+
         })
 
       } else {

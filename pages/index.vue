@@ -1,14 +1,12 @@
-
-
 <template>
-  <SectionsHome1Section1 :nota-data="notaData" :status-entrega="statusEntrega" :descricao-Max-Seq="descricaoMaxSeq" :data-Emissao="dataEmissao" :data-Prev="dataPrev"/>
-  <SectionsHome1Section2 :nota-status-data="notaStatusData"/>
-  <SectionsHome1Section3/>
-  <SectionsHome1Section4/>
-  <SectionsHome1Section5 :chave-nota="chaveNota"/>
-  <SectionsHome1Section6/>
-  <SectionsHome1Section7/>
-  <SectionsHome1Section8/>
+  <SectionsHome2Section1 :nota-data="notaData" :status-entrega="statusEntrega" :descricao-Max-Seq="descricaoMaxSeq" :data-Emissao="dataEmissao" :data-Prev="dataPrev"/>
+  <SectionsHome2Section2 :nota-status-data="notaStatusData"/>
+  <SectionsHome2Section3/>
+  <SectionsHome2Section4/>
+  <SectionsHome2Section5 :chave-nota="chaveNota"/>
+  <SectionsHome2Section6/>
+  <SectionsHome2Section7/>
+  <SectionsHome2Section8/>
   <!--    <SectionsHome1Section9/>-->
   <!--    <SectionsHome1Section10/>-->
   <!--    <SectionsHome1Section11/>-->
@@ -16,8 +14,12 @@
   <!--    <SectionsHome1Section13/>-->
   <!--    <SectionsHome1Section14/>-->
   <!--    <SectionsHome1Section15/>-->
-  <SectionsHome1Section16/>
+  <SectionsContactForm :nota-status-data="notaStatusData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao"/>
+  <SectionsHome2Section16/>
 </template>
+<script setup lang="ts">
+</script>
+
 
 
 <script>
@@ -57,9 +59,6 @@ export default {
     }
 
 
-
-
-
     //console.log(urlParams.has('yourParam')); // true
     //console.log(urlParams.get('yourParam')); // "MyParam"
 
@@ -76,7 +75,6 @@ export default {
       this.notaData = res.data[0]
       this.notaStatusData = res.data[1]
 
-
       if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
         this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
 
@@ -88,13 +86,13 @@ export default {
 
           if (lineBreakPosition !== -1) {
             this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
-            '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
           } else {
             this.descricaoMaxSeq = ultdescricao +
-            '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
           }
 
-        //  this.descricaoMaxSeq = maxSeqItem.descricao;
+          //  this.descricaoMaxSeq = maxSeqItem.descricao;
 
         } else {
           this.descricaoMaxSeq = "Não encontrado.";
@@ -106,9 +104,9 @@ export default {
         //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
 
         if( maxSeqItem.tipo === "Entrega"){
-          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ; 
+          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
         } else {
-         this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+          this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
         }
 
         console.log('maxSeqItem.tipo')
@@ -122,9 +120,9 @@ export default {
         this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
 
         if( maxSeqItem.tipo === "Entrega"){
-          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ; 
+          this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
         } else {
-         this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+          this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
         }
 
       } else {
