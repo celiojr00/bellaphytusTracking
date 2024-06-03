@@ -1,4 +1,4 @@
 .vercel
 .nuxt
-axios.js
+.axios.js
 node_modules
