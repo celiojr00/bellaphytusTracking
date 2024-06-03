@@ -16,7 +16,7 @@
                 </ul>
             </div>
 
-            <div class="top-right"  style="position:absolute; right: 10ch">
+            <div class="top-right"  style="position:absolute; right: 2ch">
               <ul class="social-icon-one">
                 <li>
                   <NuxtLink to="#"><span class="fab fa-facebook-square" target="_blank" rel="noopener" no-rel></span></NuxtLink>
@@ -33,9 +33,7 @@
                 <li  style="margin-right: 2ch;">
                   <NuxtLink to="https://www.youtube.com/@econocargoconsultoria8877" target="_blank" rel="noopener" no-rel><span class="fab fa-youtube"></span></NuxtLink>
                 </li>
-                <li style="white-space: nowrap; margin-right: 1ch; ">
-                  <NuxtLink to="/track-nota"><span>Voltar para Rastreio</span></NuxtLink>
-                </li>
+                
               </ul>
             </div>
         </div>

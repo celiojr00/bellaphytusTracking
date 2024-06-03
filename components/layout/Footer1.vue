@@ -13,7 +13,7 @@
           <div class="contact-info-block col-lg-2 col-md-4 col-sm-10 wow fadeInRight">
             <div class="footer-widget about-widget">
               <div class="logo" style="display: flex; align-items: center;">
-                <NuxtLink to="/news-details"><img src="/images/logo_econo_pro.png" style="max-width: 300px; margin-left: 10px;" alt=""></NuxtLink>
+                <img src="/images/logo_econo_pro.png" style="max-width: 300px; margin-left: 10px;" alt="">
               </div>
             </div>
           </div>

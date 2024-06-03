@@ -33,7 +33,6 @@
                          placeholder="Número Nota Fiscal" />
                 </div>
               </div>
-
             </div>
             <div class="mb-3 mt-5">
             </div>
@@ -60,8 +59,10 @@
                   <div class="text col-xl-9">
                     <div class="d-flex col-xl-12">
                       <div class="col-xl-4">
-                        <NuxtLink :to="`/?idmov=${nota.id}`">
-                          <h6 style=" color: rgb(240, 109, 62)" ><i class="lnr-icon-file-archive" style="font-size: 20px; margin-right: 10px"> </i>NF {{ nota.codigo }}</h6>
+                        <NuxtLink @click="openModal(nota.id)" title="Tracking">
+                          <h6 style=" color: rgb(240, 109, 62)" ><i class="lnr-icon-file-archive" style="font-size: 20px; margin-right: 10px"> </i>
+                            NF {{ nota.codigo }}
+                          </h6>
                         </NuxtLink>
                       </div>
                       <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7"> Valor de Nota: R$ {{ formatDecimal(nota.valorliq) }}</p><br>
@@ -73,9 +74,11 @@
                       </div>
                       <div style=" margin-left: 3ch;">
                         <span  style="font-size: 16px;">Status: {{nota.obsentr}}</span>
-                        <p style="font-size: 13px; color: #333;">Dt. Status: {{ formatDateTime(nota.dtultocor)}}</p>
+                        <p style="font-size: 13px; color: #333;">Dt. Ult.Status: {{ formatDateTime(nota.dtultocor)}}</p>
                       </div>
                     </div>
+
+                    <div><p style="font-size: 14px; color: #333;">Prev. Entrega: {{ formatDateTime(nota.dtpreventr) }}</p></div>
 
                     <div class=" mb-2">
                       <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
@@ -87,8 +90,7 @@
                         </button>
                       </NuxtLink>
                       <NuxtLink v-else
-                                :to="`/?idmov=${nota.id}`"
-                                target="_blank" title="Tracking">
+                        @click="openModal(nota.id)" title="Tracking">
                         <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
                         <button style="border: none; background: none; cursor: pointer;">
                           <i class="fas fa-external-link-alt font-size-14" style="color: #0a267a; margin-left: 15px;"></i>
@@ -116,6 +118,7 @@
                       </tbody>
                     </table>
                   </div>
+                  
                 </li>
               </ul>
             </div>
@@ -130,10 +133,9 @@
                      :is-full-page="false"/>
           </div>
 
-          <div>
-            <div v-if="!updating">
-
-
+          <div v-if="trackingOn" class="modal-overlay">
+            <div class="modal-content">
+              <div v-if="!updating">
                   <div class="text col-xl-12">
                     <table style="width: 100%; border: 1px solid black;">
                       <thead>
@@ -173,14 +175,41 @@
                       </tbody>
                     </table>
                   </div>
-
+              </div>
+              <div v-else> Carregando ...</div>
+              
+              <br>
+              <button @click="closeModal"> Fechar </button>
+              
             </div>
+              
           </div>
         </div>
       </div>
 		</div>
 	</section>
 </template>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 40px;
+  margin-left: 20ch;
+  margin-right: 20ch;
+  border-radius: 5px;
+}
+</style>
 
 <script>
 
@@ -199,6 +228,7 @@ export default {
   },
   data() {
     return {
+      trackingOn: false,
       updating: false,
       statusEntrega: '',
       notaData: null,
@@ -228,12 +258,103 @@ export default {
 
   methods: {
 
-    abrirNota(){
+    async  openModal(id){
+      this.trackingOn = true;
+      this.updating = true;
+
+      try{
+        const response = await api.get(`api/consnfabe`,{
+          params: {
+          //chave: this.chaveNota,
+          idmov: id,
+          }
+        }).then((res) => {
+          console.log('then axios rastreio nfAbe')
+          console.log(res.data)
+
+          this.notaData = res.data[0]
+          this.notaStatusData = res.data[1]
+
+          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+
+            if (this.notaStatusData.length > 0) {
+              const maxSeqItem = this.notaStatusData[0];
+
+              let ultdescricao = maxSeqItem.descricao;
+              let lineBreakPosition = ultdescricao.indexOf('\n');
+
+              if (lineBreakPosition !== -1) {
+                this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              } else {
+                this.descricaoMaxSeq = ultdescricao +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              }
+
+              //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
+            } else {
+              this.descricaoMaxSeq = "Não encontrado.";
+            }
+
+            const item = this.notaData;
+            const maxSeqItem = this.notaStatusData[0];
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+            console.log('maxSeqItem.tipo')
+            console.log(maxSeqItem.tipo)
+
+          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
+            const item = this.notaData;
+            // const itemStt = this.notaStatusData;
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+          } else {
+            this.statusEntrega = 'Documento não encontrado'
+          }
+
+          let contSeq = 0
+          this.notaStatusData.forEach((value) => {
+            value['seq'] = this.notaStatusData.length - contSeq
+            contSeq++
+          })
+
+        })
+
+      } catch (error) {
+        console.error("Erro ao buscar dados da API", error);
+        $toast.error("Erro ao buscar dados da API");
+      } finally {
+        this.updating = false;
+      }
+    },
+
+    closeModal() {
+      this.trackingOn = false;
+    },
+
+    /*abrirNota(){
       console.log('abrirNota')
       //router.push({ path: 'search-page', query: { search: 'number' } })
       //this.$router.push(`/movcte/editar/`)
 
-    },
+    },*/
 
     pesqNota(){
       console.log('pesqNota')
