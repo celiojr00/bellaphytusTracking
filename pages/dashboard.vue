@@ -1,21 +1,5 @@
 <template>
-  <SectionsHome2Section1 :nota-data="notaData" :status-entrega="statusEntrega" :descricao-Max-Seq="descricaoMaxSeq" :data-Emissao="dataEmissao" :data-Prev="dataPrev"/>
-<!--  <SectionsHome2Section2 :nota-status-data="notaStatusData"/>-->
-<!--  <SectionsHome2Section3/>-->
-<!--  <SectionsHome2Section4/>-->
-<!--  <SectionsHome2Section5 :chave-nota="chaveNota"/>-->
-<!--  <SectionsHome2Section6/>-->
-<!--  <SectionsHome2Section7/>-->
-<!--  <SectionsHome2Section8/>-->
-  <!--    <SectionsHome1Section9/>-->
-  <!--    <SectionsHome1Section10/>-->
-  <!--    <SectionsHome1Section11/>-->
-  <!--    <SectionsHome1Section12/>-->
-  <!--    <SectionsHome1Section13/>-->
-  <!--    <SectionsHome1Section14/>-->
-  <!--    <SectionsHome1Section15/>-->
-<!--  <SectionsContactForm :nota-status-data="notaStatusData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao"/>-->
-<!--  <SectionsHome2Section16/>-->
+  <SectionsHome2Section1 :nota-data="notaData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao" :data-Prev="dataPrev"/>
 </template>
 <script setup lang="ts">
 </script>
@@ -23,7 +7,7 @@
 
 
 <script>
-import api from "../../axios.js";
+import api from "../axios.js";
 import moment from 'moment';
 
 export default {

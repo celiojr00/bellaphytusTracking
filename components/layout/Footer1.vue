@@ -1,5 +1,5 @@
 <template>
-    <footer class="main-footer" style="margin-top: -8ch; margin-bottom: -2ch ">
+    <footer class="main-footer" style="margin-top: -18ch; margin-bottom: 0ch ">
     <div class="bg-image" style="background-image: url(/images/background/5.jpg); margin-top: 5ch;"></div>
     <div class="anim-icons">
       <span class="icon icon-plane-3 bounce-x"></span>
