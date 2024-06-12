@@ -1,75 +1,28 @@
 <template>
-	<!--Contact Details Start-->
 	<section class="contact-details">
 		<div class="container">
 			<div class="row">
-
-        <section class="tracking-section pull-down" style="margin-top: -45px; margin-bottom: 40px;">
-          <div class="auto-container">
-            <div class="outer-box">
-              <div class="arrow-box wow fadeInRight">
-                <img src="/images/icons/arrow-2.png" alt="" class="icon">
-                <span class="title">Resultados em <br>poucos segundos</span>
-              </div>
-              <div class="tracking-form">
-                <h4 class="title">Rastreie <br>Seu Pedido</h4>
-                <!-- Tracking Form -->
-                <form method="post" :action="`/?ch=${chaveNota}`">
-                  <div class="row">
-                    <div class="form-group col-lg-8 col-md-12 col-sm-12">
-                      <span class="icon lnr-icon-file-archive"></span>
-                      <input v-model="chaveNota" type="text" name="field_name" placeholder="Chave Nota Fiscal">
-                    </div>
-                    <div class="form-group col-lg-4 col-md-12 col-sm-12 text-end">
-                      <button type="submit" class="theme-btn btn-style-one"><span class="btn-title">Rastrear
-                                        Pedido</span></button>
-                    </div>
-                  </div>
-                </form>
-                <!-- End Tracking Form -->
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--<div class="imagem" style="display: flex; align-items: center; ">
-            <img src="/images/caminhao1.png" style="max-width: 500px; position: relative; margin-left: 95ch; margin-top: -25ch;" alt="">
-        </div>-->
-        <div class="col-xl-7 col-lg-6" style="margin-top: 80px;">
+        <div class="col-xl-5 col-lg-6" style="margin-top: 10px;">
           <div class="sec-title">
             <span class="sub-title">Informações do documento</span>
             <h2>Favor inserir </h2>
           </div>
-          <!-- Contact Form -->
           <form id="contact_form" name="contact_form" class="" method="post">
 
             <div class="row">
               <div class="col-sm-12">
                 <div class="mb-3">
-                  <span style="color: black">CNPJ Destinatário <small style= "color: red">campo obrigatório*</small></span>
+                  <span style="color: black">CNPJ/CPF Destinatário <small style= "color: red">campo obrigatório*</small></span>
                   <input name="cnpj"
                          v-model="cnpj"
                          class="form-control"
                          type="text"
-                         placeholder="CNPJ Destinatário" />
+                         placeholder="CNPJ/CPF Destinatário" />
                 </div>
               </div>
-<!--              <div class="col-sm-6">-->
-<!--                <div class="mb-3">-->
-<!--                  <label>Email <small>*</small></label>-->
-<!--                  <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email" />-->
-<!--                </div>-->
-<!--              </div>-->
             </div>
 
-
-            <!--<div class="row">
-              <h4>e / ou...</h4>
-            </div>-->
-
             <div class="row">
-
-
-
               <div class="col-sm-12">
                 <div class="mb-3">
                   <span style="color: black">Número Nota Fiscal</span>
@@ -80,11 +33,8 @@
                          placeholder="Número Nota Fiscal" />
                 </div>
               </div>
-
             </div>
             <div class="mb-3 mt-5">
-<!--              <label>Message</label>-->
-<!--              <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>-->
             </div>
             <div class="mb-3">
               <input name="form_botcheck" class="form-control" type="hidden" value="" />
@@ -92,143 +42,183 @@
               <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Limpar</span></button>
             </div>
           </form>
-          <!-- Contact Form Validation-->
         </div>
 
-
-
-        <div class="col-xl-5 col-lg-6" style="margin-top: 80px;">
-
+        <div class="col-xl-7 col-lg-6" style="margin-top: 80px; ">
           <div class="text-center">
-
             <loading v-model:active="updating"
                      :can-cancel="false"
                      :is-full-page="false"/>
-
           </div>
 
           <div class="contact-details__right">
-
             <div v-if="!updating">
 
               <ul class="list-unstyled contact-details__info">
+                <li v-for="nota in dataListNotas" :key="nota.id">
+                  <div class="text col-xl-9">
+                    <div class="d-flex col-xl-12">
+                      <div class="col-xl-4">
+                        <NuxtLink @click="openModal(nota.id)" title="Tracking">
+                          <h6 style=" color: rgb(240, 109, 62)" ><i class="lnr-icon-file-archive" style="font-size: 20px; margin-right: 10px"> </i>
+                            NF {{ nota.codigo }}
+                          </h6>
+                        </NuxtLink>
+                      </div>
+                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
+                        <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong> R$ {{ formatDecimal(nota.valorliq) }}
+                      </p><br>
+                    </div>
 
-                <li v-for="nota in dataListNotas"
-                    :key="nota.id">
-                    <div class="icon">
-                      <NuxtLink :to="`/?idmov=${nota.id}`">
-                        <span class="icon lnr-icon-file-archive theme-btn" style="background-color: rgb(240, 109, 62)"></span>
+                    <div>
+                      <span style="font-size: 16px"><strong> Nome: </strong> {{nota.remet_nome}} </span>
+                    </div>
+                    <div style="font-size: 14px; color: #111; margin-bottom: -2ch">
+                      <p v-if="nota.dtpreventr === 'SEM PREVISAO'" ><strong>Prev. Entrega: </strong> Não há registro de previsão na base de dados.</p>
+                      <p v-else><strong> Prev. Entrega: </strong> {{ formatDateTime(nota.dtpreventr) }}</p>
+                    </div>
+                    <div>
+                      <span  style="font-size: 16px;"><strong> Status: </strong> {{nota.obsentr}}</span>
+                    </div>
+                    <div class="d-flex" style=" color: #333;">
+                      <div>
+                        <p style="font-size: 13px; color: #333;"><strong> Dt. Emissão: </strong> {{ formatDateTime(nota.dtemissao) }}</p>
+                      </div>
+                      <div style=" margin-left: 3ch;">
+                        <p style="font-size: 13px; color: #333;"><strong> Dt. Ult.Status:</strong> {{ formatDateTime(nota.dtultocor)}}</p>
+                      </div>
+                    </div>
+
+                    <div class=" mb-2">
+                      <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
+                                :to="`https://www.jadlog.com.br/tracking?cpf=${nota.remet_cpf}`"
+                                target="_blank" title="Tracking">
+                        <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
+                        <button style="border: none; background: none; cursor: pointer;">
+                          <i class="fas fa-external-link-alt font-size-14" style="color: #0a267a; margin-left: 15px;"></i>
+                        </button>
+                      </NuxtLink>
+                      <NuxtLink v-else
+                        @click="openModal(nota.id)" title="Tracking">
+                        <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
+                        <button style="border: none; background: none; cursor: pointer;">
+                          <i class="fas fa-external-link-alt font-size-14" style="color: #0a267a; margin-left: 15px;"></i>
+                        </button>
                       </NuxtLink>
                     </div>
-                    <div class="text">
-                      <NuxtLink :to="`/?idmov=${nota.id}`">
-                        <h6 style=" color: rgb(240, 109, 62)">{{ nota.codigo }}</h6>
-                        <span>{{ formatDateTime(nota.dtemissao) }}</span>
-                        <span> - R$ {{ formatDecimal(nota.valorliq) }} </span>
-                        <br>
-                      </NuxtLink>
-                    </div>
+
+                    <table style="width: 100%; border: 1px solid black; color: #333;">
+                      <thead>
+                      <tr style=" border: 1px solid black;">
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; color: white;background-color: #ec5d18; font-size: 18px" colspan="2">
+                          Itens do Pedido
+                        </th>
+                      </tr>
+                      <tr style="background-color: #dde1e5; color: #333;">
+                        <th class="texto_header_white_1" style="min-width: 50%; text-align: left;border: 1px solid black; padding-left: 2ch;">Produto</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black; padding: 0px 3px">Quant.</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr v-for="item in nota.itens" :key="item.produto">
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left;  border: 1px solid black; padding-left: 2ch;">{{ item.descprod }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">{{ formatInteger(item.qtd) }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
                 </li>
-
-                <li v-if="dataListNotas && dataListNotas.length === 0">
-  								<div class="icon">
-  									<span class="lnr-icon-search"></span>
-  								</div>
-  								<div class="text">
-  									<h6>Nenhum documento encontrado</h6>
-  									<NuxtLink to="tel:980089850"><span></span> Número {{ numnota }} | CNPJ: {{ cnpj }}</NuxtLink>
-  								</div>
-  							</li>
-
-
-  <!--							-->
-  <!--              <li>-->
-  <!--								<div class="icon">-->
-  <!--									<span class="lnr-icon-envelope1"></span>-->
-  <!--								</div>-->
-  <!--								<div class="text">-->
-  <!--									<h6>Write email</h6>-->
-  <!--									<NuxtLink to="mailto:needhelp@company.com">needhelp@company.com</NuxtLink>-->
-  <!--								</div>-->
-  <!--							</li>-->
-  <!--							-->
-  <!--              <li>-->
-  <!--								<div class="icon">-->
-  <!--									<span class="lnr-icon-location"></span>-->
-  <!--								</div>-->
-  <!--								<div class="text">-->
-  <!--									<h6>Visit anytime</h6>-->
-  <!--									<span>66 broklyn golden street. New York</span>-->
-  <!--								</div>-->
-  <!--							</li>-->
-
-
               </ul>
-
-
-
-              <!--<div class="sec-title mt-5" v-if="dataListNotas">
-                <span class="sub-title">Ainda precisa de ajuda?</span>
-                <h2>Entre em contato</h2>
-             </div>-->
-
             </div>
-
 					</div>
 				</div>
-
-
-
-
 			</div>
-		</div>
-	</section>
+      <div class="row">
+        <div class="col-xl-11 col-lg-8" style="margin-top: 80px;">
+          <div class="text-center">
+            <loading v-model:active="updating"
+                     :can-cancel="false"
+                     :is-full-page="false"/>
+          </div>
 
-  <!--<section class="tracking-section pull-down" style="margin-top: -40px; margin-bottom: 20px;">
-    <div class="auto-container">
-      <div class="outer-box">
-        <div class="arrow-box wow fadeInRight">
-          <img src="/images/icons/arrow-2.png" alt="" class="icon">
-          <span class="title">Resultados em <br>poucos segundos</span>
-        </div>
-        <div class="tracking-form">
-          <h4 class="title">Rastreie <br>Seu Pedido</h4>
-          <-- Tracking Form ->
-          <form method="post" :action="`/?ch=${chaveNota}`">
-            <div class="row">
-              <div class="form-group col-lg-8 col-md-12 col-sm-12">
-                <span class="icon lnr-icon-file-archive"></span>
-                <input v-model="chaveNota" type="text" name="field_name" placeholder="Chave Nota Fiscal">
+          <div v-if="trackingOn" class="modal-overlay">
+            <div class="modal-content">
+              <div v-if="!updating">
+                  <div class="text col-xl-12">
+                    <table style="width: 100%; border: 1px solid black;">
+                      <thead>
+                      <tr style=" border: 1px solid black;">
+                        <th class="texto_header_white_1" style="min-width: 100px; color: white;background-color: #ec5d18; font-size: 24px;
+                          text-align: center;" colspan="4">
+                          Rastreio do Pedido
+                        </th>
+                      </tr>
+
+                      <tr style=" border: 1px solid black; background-color: #dde1e5; color: #333; line-height: 2.5;">
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Dt. Emissão: {{ dataEmissao }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black;" colspan="2">
+                          Status de Entrega: {{ statusEntrega }}</th>
+                      </tr>
+
+                      <tr style=" border: 1px solid black;color: #333; text-align: center;">
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0px 30px">Seq.</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black;">Data</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Ocorrência</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Descrição</th>
+
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr v-for="notaSts in notaStatusData"
+                          :key="notaSts.id">
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">
+                          <i :class=" notaSts.tipo === 'Entrega' ? 'icon flaticon-checklist'
+                                    : notaSts.tipo === 'Pre-Entrega' ? 'icon flaticon-checklist'
+                                    : notaSts.tipo === 'Cliente' ? 'icon flaticon-logistics-delivery-6' : 'icon flaticon-shipping-2'"></i>
+                          <span class="count"> {{ notaSts.seq }}</span></td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">{{ notaSts.data }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.ocorrencia }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.descricao }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
               </div>
-              <div class="form-group col-lg-4 col-md-12 col-sm-12 text-end">
-                <button type="submit" class="theme-btn btn-style-one"><span class="btn-title">Rastrear
-                                        Pedido</span></button>
-              </div>
+              <div v-else> Carregando ...</div>
+              
+              <br>
+              <button @click="closeModal"> Fechar </button>
+              
             </div>
-          </form>
-          <!- End Tracking Form ->
+              
+          </div>
         </div>
       </div>
-    </div>
-  </section>-->
-	<!--Contact Details End-->
-
-	<!-- Divider: Google Map -->
-<!--	<section>-->
-<!--		<div class="container-fluid p-0">-->
-<!--			<div class="row">-->
-<!--				&lt;!&ndash; Google Map HTML Codes &ndash;&gt;-->
-<!--				<iframe-->
-<!--					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd"-->
-<!--					data-tm-width="100%"-->
-<!--					height="500"-->
-<!--					frameborder="0"-->
-<!--					allowfullscreen=""-->
-<!--				></iframe>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</section>-->
+		</div>
+	</section>
 </template>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 40px;
+  margin-left: 20ch;
+  margin-right: 20ch;
+  border-radius: 5px;
+}
+</style>
 
 <script>
 
@@ -247,7 +237,12 @@ export default {
   },
   data() {
     return {
+      trackingOn: false,
       updating: false,
+      statusEntrega: '',
+      notaData: null,
+      notaStatusData: null,
+      dataEmissao:'',
       dataListNotas: null,
       chaveNota: null,
       numnota: '',
@@ -257,7 +252,8 @@ export default {
 
   mounted() {
 
-
+    console.log('this.notaStatusData')
+    console.log(this.notaStatusData)
 
 
     // let instance = this.$toast.open('You did it!');
@@ -271,12 +267,103 @@ export default {
 
   methods: {
 
-    abrirNota(){
+    async  openModal(id){
+      this.trackingOn = true;
+      this.updating = true;
+
+      try{
+        const response = await api.get(`api/consnfabe`,{
+          params: {
+          //chave: this.chaveNota,
+          idmov: id,
+          }
+        }).then((res) => {
+          console.log('then axios rastreio nfAbe')
+          console.log(res.data)
+
+          this.notaData = res.data[0]
+          this.notaStatusData = res.data[1]
+
+          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+
+            if (this.notaStatusData.length > 0) {
+              const maxSeqItem = this.notaStatusData[0];
+
+              let ultdescricao = maxSeqItem.descricao;
+              let lineBreakPosition = ultdescricao.indexOf('\n');
+
+              if (lineBreakPosition !== -1) {
+                this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              } else {
+                this.descricaoMaxSeq = ultdescricao +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              }
+
+              //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
+            } else {
+              this.descricaoMaxSeq = "Não encontrado.";
+            }
+
+            const item = this.notaData;
+            const maxSeqItem = this.notaStatusData[0];
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+            console.log('maxSeqItem.tipo')
+            console.log(maxSeqItem.tipo)
+
+          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
+            const item = this.notaData;
+            // const itemStt = this.notaStatusData;
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+          } else {
+            this.statusEntrega = 'Documento não encontrado'
+          }
+
+          let contSeq = 0
+          this.notaStatusData.forEach((value) => {
+            value['seq'] = this.notaStatusData.length - contSeq
+            contSeq++
+          })
+
+        })
+
+      } catch (error) {
+        console.error("Erro ao buscar dados da API", error);
+        $toast.error("Erro ao buscar dados da API");
+      } finally {
+        this.updating = false;
+      }
+    },
+
+    closeModal() {
+      this.trackingOn = false;
+    },
+
+    /*abrirNota(){
       console.log('abrirNota')
       //router.push({ path: 'search-page', query: { search: 'number' } })
       //this.$router.push(`/movcte/editar/`)
 
-    },
+    },*/
 
     pesqNota(){
       console.log('pesqNota')
@@ -293,6 +380,12 @@ export default {
           console.log('then axios rastreio nfsAbe')
           console.log(res.data)
           this.dataListNotas = res.data[0]
+          this.notaData = res.data[1]
+          this.notaStatusData = res.data[2]
+
+          console.log('dataListNotas')
+          console.log(this.dataListNotas)
+
           this.updating = false
           if (this.dataListNotas.length === 0) {
             $toast.open({
@@ -301,6 +394,67 @@ export default {
               duration: 3000
             })
           }
+
+          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+
+            if (this.notaStatusData.length > 0) {
+              const maxSeqItem = this.notaStatusData[0];
+
+              let ultdescricao = maxSeqItem.descricao;
+              let lineBreakPosition = ultdescricao.indexOf('\n');
+
+              if (lineBreakPosition !== -1) {
+                this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              } else {
+                this.descricaoMaxSeq = ultdescricao +
+                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              }
+
+              //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
+            } else {
+              this.descricaoMaxSeq = "Não encontrado.";
+            }
+
+            const item = this.notaData;
+            const maxSeqItem = this.notaStatusData[0];
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+            console.log('maxSeqItem.tipo')
+            console.log(maxSeqItem.tipo)
+
+          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
+            const item = this.notaData;
+            // const itemStt = this.notaStatusData;
+            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+
+            if( maxSeqItem.tipo === "Entrega"){
+              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
+            } else {
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
+            }
+
+          } else {
+            this.statusEntrega = 'Documento não encontrado'
+          }
+
+          let contSeq = 0
+          this.notaStatusData.forEach((value) => {
+            value['seq'] = this.notaStatusData.length - contSeq
+            contSeq++
+          })
+
         })
 
       } else {
@@ -333,7 +487,15 @@ export default {
         return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 2});
       }
       return 0.00;
-    }
+    },
+
+    formatInteger(value) {
+      if (value) {
+        let value_n = parseFloat(value)
+        return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 0});
+      }
+      return 0.00;
+    },
 
   }
 
