@@ -65,20 +65,29 @@
                           </h6>
                         </NuxtLink>
                       </div>
-                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7"> Valor de Nota: R$ {{ formatDecimal(nota.valorliq) }}</p><br>
+                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
+                        <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong> R$ {{ formatDecimal(nota.valorliq) }}
+                      </p><br>
+                    </div>
+
+                    <div>
+                      <span style="font-size: 16px"><strong> Nome: </strong> {{nota.remet_nome}} </span>
+                    </div>
+                    <div style="font-size: 14px; color: #111; margin-bottom: -2ch">
+                      <p v-if="nota.dtpreventr === 'SEM PREVISAO'" ><strong>Prev. Entrega: </strong> Não há registro de previsão na base de dados.</p>
+                      <p v-else><strong> Prev. Entrega: </strong> {{ formatDateTime(nota.dtpreventr) }}</p>
+                    </div>
+                    <div>
+                      <span  style="font-size: 16px;"><strong> Status: </strong> {{nota.obsentr}}</span>
                     </div>
                     <div class="d-flex" style=" color: #333;">
                       <div>
-                        <span style="font-size: 16px">Nome: {{nota.remet_nome}} </span>
-                        <p style="font-size: 13px; color: #333;">Dt. Emissão: {{ formatDateTime(nota.dtemissao) }}</p>
+                        <p style="font-size: 13px; color: #333;"><strong> Dt. Emissão: </strong> {{ formatDateTime(nota.dtemissao) }}</p>
                       </div>
                       <div style=" margin-left: 3ch;">
-                        <span  style="font-size: 16px;">Status: {{nota.obsentr}}</span>
-                        <p style="font-size: 13px; color: #333;">Dt. Ult.Status: {{ formatDateTime(nota.dtultocor)}}</p>
+                        <p style="font-size: 13px; color: #333;"><strong> Dt. Ult.Status:</strong> {{ formatDateTime(nota.dtultocor)}}</p>
                       </div>
                     </div>
-
-                    <div><p style="font-size: 14px; color: #333;">Prev. Entrega: {{ formatDateTime(nota.dtpreventr) }}</p></div>
 
                     <div class=" mb-2">
                       <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
