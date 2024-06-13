@@ -319,7 +319,12 @@ export default {
             const item = this.notaData;
             const maxSeqItem = this.notaStatusData[0];
             this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-            this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+            if(item.dtpreventr === 'SEM PREVISAO'){
+              this.dataPrev = item.dtpreventr;
+            }else{
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+            }
+
 
 
           } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
