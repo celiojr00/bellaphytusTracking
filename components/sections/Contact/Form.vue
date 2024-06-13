@@ -15,6 +15,7 @@
                   <span style="color: black">CNPJ/CPF Destinatário <small style= "color: red">campo obrigatório*</small></span>
                   <input name="cnpj"
                          v-model="cnpj"
+                         v-on:keyup.enter="pesqNota"
                          class="form-control"
                          type="text"
                          placeholder="CNPJ/CPF Destinatário" />
@@ -28,6 +29,7 @@
                   <span style="color: black">Número Nota Fiscal</span>
                   <input name="numnf"
                          v-model="numnota"
+                         v-on:keyup.enter="pesqNota"
                          class="form-control required"
                          type="text"
                          placeholder="Número Nota Fiscal" />
@@ -66,28 +68,33 @@
                         </NuxtLink>
                       </div>
                       <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
-                        <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong> R$ {{ formatDecimal(nota.valorliq) }}
+                        <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong>
+                        R$ {{ formatDecimal(nota.valorliq) }}
                       </p><br>
                     </div>
-
                     <div>
-                      <span style="font-size: 16px"><strong> Nome: </strong> {{nota.remet_nome}} </span>
-                    </div>
-                    <div style="font-size: 14px; color: #111; margin-bottom: -2ch">
-                      <p v-if="nota.dtpreventr === 'SEM PREVISAO'" ><strong>Prev. Entrega: </strong> Não há registro de previsão na base de dados.</p>
-                      <p v-else><strong> Prev. Entrega: </strong> {{ formatDateTime(nota.dtpreventr) }}</p>
+                      <span style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Nome: </strong>
+                        {{nota.remet_nome}}
+                      </span>
                     </div>
                     <div>
-                      <span  style="font-size: 16px;"><strong> Status: </strong> {{nota.obsentr}}</span>
+                      <span  style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Status: </strong>
+                        {{nota.obsentr}}
+                      </span>
                     </div>
                     <div class="d-flex" style=" color: #333;">
                       <div>
-                        <p style="font-size: 13px; color: #333;"><strong> Dt. Emissão: </strong> {{ formatDateTime(nota.dtemissao) }}</p>
+                        <p style="font-size: 13px; color: #6a6969;"><strong style="color: #434242"> Dt. Emissão: </strong>
+                          {{ formatDateTime(nota.dtemissao) }}
+                        </p>
                       </div>
                       <div style=" margin-left: 3ch;">
-                        <p style="font-size: 13px; color: #333;"><strong> Dt. Ult.Status:</strong> {{ formatDateTime(nota.dtultocor)}}</p>
+                        <p style="font-size: 13px; color: #6a6969;;"><strong style="color: #434242"> Dt. Ult.Status: </strong>
+                          {{ formatDateTime(nota.dtultocor)}}
+                        </p>
                       </div>
                     </div>
+
 
                     <div class=" mb-2">
                       <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
@@ -121,8 +128,8 @@
                       </thead>
                       <tbody>
                       <tr v-for="item in nota.itens" :key="item.produto">
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left;  border: 1px solid black; padding-left: 2ch;">{{ item.descprod }}</td>
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center;  border: 1px solid black;">{{ formatInteger(item.qtd) }}</td>
+                        <td style="min-width: 50%; color: #6a6969;text-align: left;  border: 1px solid black; padding-left: 2ch;">{{ item.descprod }}</td>
+                        <td style="min-width: 50%; color: #6a6969;text-align: center;  border: 1px solid black;">{{ formatInteger(item.qtd) }}</td>
                       </tr>
                       </tbody>
                     </table>
@@ -156,7 +163,8 @@
                       </tr>
 
                       <tr style=" border: 1px solid black; background-color: #dde1e5; color: #333; line-height: 2.5;">
-                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;" colspan="2">Dt. Emissão: {{ dataEmissao }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;">Dt. Emissão: {{ dataEmissao }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;">Prev. Entrega: {{ dataPrev }}</th>
                         <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black;" colspan="2">
                           Status de Entrega: {{ statusEntrega }}</th>
                       </tr>
@@ -243,6 +251,7 @@ export default {
       notaData: null,
       notaStatusData: null,
       dataEmissao:'',
+      dataPrev:'',
       dataListNotas: null,
       chaveNota: null,
       numnota: '',
@@ -272,7 +281,7 @@ export default {
       this.updating = true;
 
       try{
-        const response = await api.get(`api/consnfabe`,{
+        api.get(`api/consnfabe`,{
           params: {
           //chave: this.chaveNota,
           idmov: id,
@@ -310,16 +319,8 @@ export default {
             const item = this.notaData;
             const maxSeqItem = this.notaStatusData[0];
             this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+            this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
 
-            if( maxSeqItem.tipo === "Entrega"){
-              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
-            } else {
-              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
-            }
-
-            console.log('maxSeqItem.tipo')
-            console.log(maxSeqItem.tipo)
 
           } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
             this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
@@ -344,8 +345,7 @@ export default {
             contSeq++
           })
 
-        })
-
+        });
       } catch (error) {
         console.error("Erro ao buscar dados da API", error);
         $toast.error("Erro ao buscar dados da API");
@@ -421,16 +421,7 @@ export default {
             const item = this.notaData;
             const maxSeqItem = this.notaStatusData[0];
             this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-            //this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
-
-            if( maxSeqItem.tipo === "Entrega"){
-              this.dataPrev = moment(maxSeqItem.data).format('DD/MM/YYYY') ;
-            } else {
-              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY') ;
-            }
-
-            console.log('maxSeqItem.tipo')
-            console.log(maxSeqItem.tipo)
+            this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
 
           } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
             this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
@@ -449,11 +440,14 @@ export default {
             this.statusEntrega = 'Documento não encontrado'
           }
 
-          let contSeq = 0
-          this.notaStatusData.forEach((value) => {
-            value['seq'] = this.notaStatusData.length - contSeq
-            contSeq++
-          })
+          if(this.notaStatusData){
+            let contSeq = 0
+            this.notaStatusData.forEach((value) => {
+              value['seq'] = this.notaStatusData.length - contSeq
+              contSeq++
+            })
+          }
+
 
         })
 
