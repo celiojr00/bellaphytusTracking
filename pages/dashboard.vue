@@ -84,14 +84,6 @@ export default {
       this.$refs.targetRef.scrollIntoView({behavior: 'smooth', block: "center"});
     },
 
-    // formatDecimal(value) {
-    //   if(value){
-    //     let value_n = parseFloat(value)
-    //     return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 2});
-    //   }
-    //   return 0.00;
-    // },
-
     formatInteger(value) {
       if(value){
         let value_n = parseFloat(value)
@@ -232,7 +224,7 @@ export default {
                         <h4 class="badge badge-soft-warnig font-size-32" style="padding: 3px 100px; margin-left: -20px; margin-right: 20px"> DIA </h4> <br>
                         <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -125px">Notas Emitidas:</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
-                          <h4 class="font-size-80" style="color: #d39d02; margin-right: -19.5ch; margin-top: 30px">5.2{{formatInteger(listaResultados.totalEmitDia)}}</h4>
+                          <h4 class="font-size-80" style="color: #d39d02; margin-right: -19.5ch; margin-top: 30px">{{formatInteger(listaResultados.totalEmitDia)}}</h4>
                         </div>
                         <p style="color: #d39d02; font-size: 36px; margin-left: 180px; margin-right: -1ch; margin-top: -7px">NF's</p>
                       </div>
