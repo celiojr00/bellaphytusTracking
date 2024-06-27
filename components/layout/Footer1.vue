@@ -1,7 +1,7 @@
 <template>
     <footer class="main-footer" style="margin-top: -18ch; margin-bottom: 0ch ">
     <div class="bg-image" style="background-image: url(/images/background/5.jpg); margin-top: 5ch;"></div>
-    <div class="anim-icons">
+    <div class="anim-icons" style="position: absolute; margin-top: -2.9ch ;margin-left:70ch">
       <span class="icon icon-plane-3 bounce-x"></span>
     </div>
 
@@ -13,7 +13,7 @@
           <div class="contact-info-block col-lg-2 col-md-4 col-sm-10 wow fadeInRight">
             <div class="footer-widget about-widget">
               <div class="logo" style="display: flex; align-items: center;">
-                <img src="/images/logo_econo_pro.png" style="max-width: 300px; margin-left: 10px;" alt="">
+                <img src="/images/logoeconopro.png" style="max-width: 400px; margin-left: 10px;" alt="">
               </div>
             </div>
           </div>
