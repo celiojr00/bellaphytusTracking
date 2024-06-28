@@ -37,6 +37,10 @@
             </div>
           </div>
 
+          <div style="text-align: center; position: absolute; top: 0ch">
+            <span style="font-size: 20px; color: #fff; margin-left: 109ch; ">{{ countDown }}</span> <br>
+          </div>
+
           <!--Painel Itens Em Pordução-->
           <div class="row btn-box animate-4" style="position: relative; left: 120ch; top: -28ch">
             <div class="title-column col-lg-6 col-md-12"
@@ -104,8 +108,8 @@
               <div class="btn-box animate-4">
                 <!-- Painel Diario -->
                 <div style="position: relative; left: -50ch; top: -26px">
-                  <h4 class="badge badge-soft-white" style="color: #d39d02; font-size: 32px; position: absolute; top: -1.15ch ;left: 4.2ch; padding: 0.1ch 3.2ch"> Nota Fiscal </h4>
-                  <h4 class="badge badge-soft-white" style="color: #d39d02; font-size: 32px; position: absolute; top: -1.15ch ;left: 30ch; padding: 0.1ch 2.5ch"> Romaneio </h4>
+                  <h4 class="badge badge-soft-white" style="color: #d39d02; font-size: 32px; position: absolute; top: -1.15ch ;left: 6ch; padding: 0.1ch 3.2ch"> Nota </h4>
+                  <h4 class="badge badge-soft-white" style="color: #d39d02; font-size: 32px; position: absolute; top: -1.15ch ;left: 31ch; padding: 0.1ch 2.5ch"> Pedido </h4>
                   <div class="badge badge-soft-white" style=" width: 1340px; height: 202px; position: absolute; top: 1.55ch ;left: -16ch">
                     <div class="d-flex justify-content-center">
 
@@ -114,8 +118,7 @@
                         <h4 class="badge badge-soft-warnig font-size-32" style="padding: 3px 100px; margin-left: -30px; margin-right: 15px"> DIA </h4> <br>
                         <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -140px">Notas Emitidas:</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -33ch; text-align: center">
-                          <h4 class="font-size-80" style="color: #d39d02; margin-right: -21ch; margin-top: 30px"></h4>
-<!--                          {{ this.listaResultados.totalEmitDia}}-->
+                          <h4 class="font-size-80" style="color: #d39d02;; margin-right: -21ch; margin-top: 30px">1023</h4>
                         </div>
                         <p style="color: #d39d02; font-size: 36px; margin-left: 180px; margin-right: 2ch; margin-top: -7px">NF's</p>
                       </div>
@@ -180,10 +183,11 @@
                     </div>
                   </div>
                 </div>
+
                 <!-- Painel da Semana -->
                 <div style="position: relative; left: -50ch; top: -12px">
-                  <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 4.2ch; padding: 0.1ch 3.2ch"> Nota Fiscal </h4>
-                  <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 30ch; padding: 0.1ch 2.5ch"> Romaneio </h4>
+                  <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 6ch; padding: 0.1ch 3.2ch"> Nota </h4>
+                  <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 31ch; padding: 0.1ch 2.5ch"> Pedido </h4>
                   <div class="badge badge-soft-white" style=" width: 1340px; height: 202px; position: absolute; top: 15.5ch ;left: -16ch">
                   <div class="d-flex justify-content-center">
 
@@ -192,8 +196,7 @@
                       <h4 class="badge badge-soft-info font-size-32" style="padding: 3px 60px; margin-left: -30px; margin-right: 15px"> SEMANA </h4> <br>
                       <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -140px">Notas Emitidas:</p>
                       <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -33ch; text-align: center">
-                        <h4 class="font-size-80" style="color: #0c5460;; margin-right: -21ch; margin-top: 30px"></h4>
-<!--                        {{ this.listaResultados.totalEmitSem}}-->
+                        <h4 class="font-size-80" style="color: #0c5460;; margin-right: -21ch; margin-top: 30px">1023</h4>
                       </div>
                       <p style="color: #0c5460; font-size: 36px; margin-left: 180px; margin-right: 2ch; margin-top: -7px">NF's</p>
                     </div>
@@ -266,8 +269,8 @@
                 </div>
                 <!-- Painel da Mensal -->
                 <div style="position: relative; left: -50ch">
-                  <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 4.2ch; padding: 0.1ch 3.2ch"> Nota Fiscal </h4>
-                  <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 30ch; padding: 0.1ch 2.5ch"> Romaneio </h4>
+                  <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 6ch; padding: 0.1ch 3.2ch"> Nota </h4>
+                  <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 31ch; padding: 0.1ch 2.5ch"> Pedido </h4>
                   <div class="badge badge-soft-white" style=" width: 1340px; height: 202px; position: absolute; top: 29.5ch ;left: -16ch">
                   <div class="d-flex justify-content-center">
 
@@ -276,8 +279,7 @@
                       <h4 class="badge badge-soft-success font-size-32" style="padding: 3px 95px; margin-left: -30px; margin-right: 15px"> MÊS </h4> <br>
                       <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -140px">Notas Emitidas:</p>
                       <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -33ch; text-align: center">
-                        <h4 class="font-size-80" style="color: #155724;; margin-right: -21ch; margin-top: 30px"></h4>
-<!--                        {{ this.listaResultados.totalEmitMes}}-->
+                        <h4 class="font-size-80" style="color: #155724;; margin-right: -21ch; margin-top: 30px">1023</h4>
                       </div>
                       <p style="color: #155724; font-size: 36px; margin-left: 180px; margin-right: 2ch; margin-top: -7px">NF's</p>
                     </div>
@@ -413,7 +415,7 @@ export default {
   },
 
   props: {
-    listaResultados: {
+    notaData: {
       type: Object,
       required: false,
     },
@@ -435,6 +437,11 @@ export default {
 
     dataEmissao: {
       type: String,
+      required: false,
+    },
+
+    countDown:{
+      type: Number,
       required: false,
     }
   },
