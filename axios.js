@@ -5,7 +5,7 @@ const api = axios.create({
     //baseURL: 'https://bluevix01.ddns.net/',
     //baseURL: 'https://celeirobike.ddns.net/',
     //baseURL: 'https://globopharma2.ddns.net/',
-    baseURL: 'https://granlogprd.ddns.net/',
+    //baseURL: 'https://granlogprd.ddns.net/',
     //baseURL: 'https://grupofesta.ddns.net/',
     //baseURL: 'https://grupojpp.ddns.net/',
     //baseURL: 'https://jsalog.ddns.net/',
@@ -14,6 +14,7 @@ const api = axios.create({
     //baseURL: 'https://officetotaleconopro.ddns.net/',
     //baseURL: 'https://ogcomercial.ddns.net/',
     //baseURL: 'https://oncovit01.ddns.net/',
+    baseURL: 'https://vitascience.ddns.net/',
 
 
     headers: {
