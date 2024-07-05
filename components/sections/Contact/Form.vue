@@ -255,23 +255,24 @@ export default {
       dataListNotas: null,
       chaveNota: null,
       numnota: '',
-      cnpj: ''
+      cnpj: '',
     }
   },
 
   mounted() {
+    const {cnpj, numnota} = this.$route.query;
 
-    console.log('this.notaStatusData')
-    console.log(this.notaStatusData)
+    this.cnpj = cnpj;
+    this.numnota = numnota;
+  },
 
-
-    // let instance = this.$toast.open('You did it!');
-    //
-    // // Force dismiss specific toast
-    // instance.dismiss();
-    //
-    // // Dismiss all opened toast immediately
-    // this.$toast.clear();
+  watch: {
+    cnpj(newCnpj) {
+      this.updateURL();
+    },
+    numnota(newNumNota) {
+      this.updateURL();
+    }
   },
 
   methods: {
@@ -352,11 +353,20 @@ export default {
       this.trackingOn = false;
     },
 
+    updateURL() {
+      this.$router.push({
+        query: {
+          ...this.$route.query,
+          cnpj: this.cnpj,
+          numnota: this.numnota
+        }
+      });
+    },
+
     pesqNota(){
       console.log('pesqNota')
 
       if (this.cnpj !== '') {
-
         this.updating = true
         api.get(`api/consnfsabe`, {
           params: {
