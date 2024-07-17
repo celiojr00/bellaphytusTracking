@@ -74,7 +74,12 @@
                     </div>
                     <div>
                       <span style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Nome: </strong>
-                        {{nota.remet_nome}}
+                        {{nota.dest_nome}}
+                      </span>
+                    </div>
+                    <div>
+                      <span  style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Cód. do Objeto: </strong>
+                        {{ nota.codobj }}
                       </span>
                     </div>
                     <div>
@@ -98,7 +103,7 @@
 
                     <div class=" mb-2">
                       <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
-                                :to="`https://www.jadlog.com.br/tracking?cpf=${nota.remet_cpf}`"
+                                :to="`https://www.jadlog.com.br/tracking?cpf=${nota.dest_cpf}`"
                                 target="_blank" title="Tracking">
                         <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
                         <button style="border: none; background: none; cursor: pointer;">
