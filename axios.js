@@ -25,6 +25,8 @@ const api = axios.create({
         'X-Requested-With': 'XMLHttpRequest',
         // 'Authorization': `Bearer 6|ONqlo215CHCtZbiSsyicPzhaPCow48ZcuKCVYgZp`
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
+        
+        'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F` // granlog
     },
 })
 
