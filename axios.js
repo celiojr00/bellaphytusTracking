@@ -22,6 +22,8 @@ const api = axios.create({
         'X-Requested-With': 'XMLHttpRequest',
         // 'Authorization': `Bearer 6|ONqlo215CHCtZbiSsyicPzhaPCow48ZcuKCVYgZp`
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
+
+        'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4`  // grupofesta
     },
 })
 
