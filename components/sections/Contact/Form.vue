@@ -196,7 +196,7 @@
                                     : notaSts.tipo === 'Pre-Entrega' ? 'icon flaticon-checklist'
                                     : notaSts.tipo === 'Cliente' ? 'icon flaticon-logistics-delivery-6' : 'icon flaticon-shipping-2'"></i>
                           <span class="count"> {{ notaSts.seq }}</span></td>
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ notaSts.data }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ formatDateTime(notaSts.data) }}</td>
                         <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ notaSts.ocorrencia }}</td>
                         <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ notaSts.descricao }}</td>
                       </tr>
