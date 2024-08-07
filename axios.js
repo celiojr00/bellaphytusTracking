@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    //baseURL: 'http://127.0.0.1:8000/',
+    baseURL: 'http://127.0.0.1:8000/',
     //baseURL: 'https://bluevix01.ddns.net/',
     //baseURL: 'https://celeirobike.ddns.net/',
     //baseURL: 'https://globopharma2.ddns.net/',
@@ -14,7 +14,7 @@ const api = axios.create({
     //baseURL: 'https://officetotaleconopro.ddns.net/',
     //baseURL: 'https://ogcomercial.ddns.net/',
     //baseURL: 'https://oncovit01.ddns.net/',
-    baseURL: 'https://vitascience.ddns.net/',
+    // baseURL: 'https://vitascience.ddns.net/',
 
 
     headers: {
@@ -26,6 +26,22 @@ const api = axios.create({
         'X-Requested-With': 'XMLHttpRequest',
         // 'Authorization': `Bearer 6|ONqlo215CHCtZbiSsyicPzhaPCow48ZcuKCVYgZp`
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
+
+        //'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84`  //oncovit
+        //'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE`  // bluevix
+        //'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt`  // celeirobike
+        //'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG`  // globopharma
+        //'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F` // granlog
+        //'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4`  // grupofesta
+        //'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg` // grupojpp
+        // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch`  // jsalog
+        //'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r`  // lelloprint
+        //'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa`  // macrolub
+        //'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw`  // officetotal
+        //'Authorization': `Bearer 7|ctmFJYjo0926YsRYw7aOGcNNiaYetGdJJBjzMr1i`   // ogcomercial
+        'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF` // vitascience
+
+
     },
 })
 

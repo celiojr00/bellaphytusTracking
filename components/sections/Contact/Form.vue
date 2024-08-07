@@ -74,7 +74,12 @@
                     </div>
                     <div>
                       <span style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Nome: </strong>
-                        {{nota.remet_nome}}
+                        {{nota.dest_nome}}
+                      </span>
+                    </div>
+                    <div>
+                      <span  style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Cód. do Objeto: </strong>
+                        {{ nota.codobj }}
                       </span>
                     </div>
                     <div>
@@ -98,7 +103,7 @@
 
                     <div class=" mb-2">
                       <NuxtLink v-if="nota.transportadora === 'JADLOG LOGISTICA S.A'"
-                                :to="`https://www.jadlog.com.br/tracking?cpf=${nota.remet_cpf}`"
+                                :to="`https://www.jadlog.com.br/tracking?cpf=${nota.dest_cpf}`"
                                 target="_blank" title="Tracking">
                         <span style="font-size: 16px; color: #0a267a">Transp.: {{nota.transportadora}}</span>
                         <button style="border: none; background: none; cursor: pointer;">
@@ -142,17 +147,23 @@
 				</div>
 			</div>
       <div class="row">
-        <div class="col-xl-11 col-lg-8" style="margin-top: 80px;">
+        <div class="col-xl-11 col-lg-8 col-md-10 col-sm-12 col-12" style="margin-top: 80px;">
           <div class="text-center">
             <loading v-model:active="updating"
                      :can-cancel="false"
                      :is-full-page="false"/>
           </div>
 
-          <div v-if="trackingOn" class="modal-overlay">
-            <div class="modal-content">
+          <div v-if="trackingOn" class="modal-overlay d-flex justify-content-center align-items-center" @click="closeModal">
+            <div class="modal-content" style="position: relative; max-height: 80vh; min-width: 32ch; overflow-y: auto; padding: 10px">
               <div v-if="!updating">
                   <div class="text col-xl-12">
+                    <div class="d-flex justify-content-end align-items-center mb-1" >
+                      <b-button type="button" class="close bg-white text-dark border-1px rounded" @click="closeModal" aria-label="Close" style="padding: 0.2ch 1ch">
+                        Fechar
+                      </b-button>
+                    </div>
+
                     <table style="width: 100%; border: 1px solid black;">
                       <thead>
                       <tr style=" border: 1px solid black;">
@@ -163,31 +174,31 @@
                       </tr>
 
                       <tr style=" border: 1px solid black; background-color: #dde1e5; color: #333; line-height: 2.5;">
-                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;">Dt. Emissão: {{ dataEmissao }}</th>
-                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center;">Prev. Entrega: {{ dataPrev }}</th>
-                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black;" colspan="2">
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; padding: 0ch 1ch;">Emissão: {{ dataEmissao }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black; padding: 0ch 2ch;">Previsão: {{ dataPrev }}</th>
+                        <th class="texto_header_white_1" style="min-width: 100px; text-align: center; border-left: 1px solid black; padding: 0ch 2ch;" colspan="2">
                           Status de Entrega: {{ statusEntrega }}</th>
                       </tr>
 
                       <tr style=" border: 1px solid black;color: #333; text-align: center;">
-                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0px 30px">Seq.</th>
-                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black;">Data</th>
-                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Ocorrência</th>
-                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding-left: 2ch;">Descrição</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0px 1px">Seq.</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0ch 1ch;">Data</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0ch 1ch;;">Ocorrência</th>
+                        <th class="texto_header_white_1" style="min-width: 50%; border: 1px solid black; padding: 0ch 4ch;">Descrição</th>
 
                       </tr>
                       </thead>
                       <tbody>
                       <tr v-for="notaSts in notaStatusData"
                           :key="notaSts.id">
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 1ch 1ch;">
                           <i :class=" notaSts.tipo === 'Entrega' ? 'icon flaticon-checklist'
                                     : notaSts.tipo === 'Pre-Entrega' ? 'icon flaticon-checklist'
                                     : notaSts.tipo === 'Cliente' ? 'icon flaticon-logistics-delivery-6' : 'icon flaticon-shipping-2'"></i>
                           <span class="count"> {{ notaSts.seq }}</span></td>
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black;">{{ notaSts.data }}</td>
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.ocorrencia }}</td>
-                        <td class="texto_header_white_1" style="min-width: 50%; text-align: left; color: #333; border: 1px solid black; padding-left: 2ch;">{{ notaSts.descricao }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ formatDateTime(notaSts.data) }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ notaSts.ocorrencia }}</td>
+                        <td class="texto_header_white_1" style="min-width: 50%; text-align: center; color: #333; border: 1px solid black; padding: 0ch 1ch;">{{ notaSts.descricao }}</td>
                       </tr>
                       </tbody>
                     </table>
@@ -196,11 +207,13 @@
               <div v-else> Carregando ...</div>
               
               <br>
-              <button @click="closeModal"> Fechar </button>
+<!--              <button @click="closeModal"> Fechar </button>-->
               
             </div>
               
           </div>
+
+
         </div>
       </div>
 		</div>
@@ -255,23 +268,24 @@ export default {
       dataListNotas: null,
       chaveNota: null,
       numnota: '',
-      cnpj: ''
+      cnpj: '',
     }
   },
 
   mounted() {
+    const {cnpj, numnota} = this.$route.query;
 
-    console.log('this.notaStatusData')
-    console.log(this.notaStatusData)
+    this.cnpj = cnpj;
+    this.numnota = numnota;
+  },
 
-
-    // let instance = this.$toast.open('You did it!');
-    //
-    // // Force dismiss specific toast
-    // instance.dismiss();
-    //
-    // // Dismiss all opened toast immediately
-    // this.$toast.clear();
+  watch: {
+    cnpj(newCnpj) {
+      this.updateURL();
+    },
+    numnota(newNumNota) {
+      this.updateURL();
+    }
   },
 
   methods: {
@@ -352,11 +366,20 @@ export default {
       this.trackingOn = false;
     },
 
+    updateURL() {
+      this.$router.push({
+        query: {
+          ...this.$route.query,
+          cnpj: this.cnpj,
+          numnota: this.numnota
+        }
+      });
+    },
+
     pesqNota(){
       console.log('pesqNota')
 
       if (this.cnpj !== '') {
-
         this.updating = true
         api.get(`api/consnfsabe`, {
           params: {
