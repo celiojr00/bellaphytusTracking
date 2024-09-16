@@ -188,6 +188,7 @@
 
                       </tr>
                       </thead>
+
                       <tbody>
                       <tr v-for="notaSts in notaStatusData"
                           :key="notaSts.id">
@@ -378,6 +379,9 @@ export default {
 
     pesqNota(){
       console.log('pesqNota')
+
+      console.log('testando conexão api...')
+      api.get(`api/testarapi`).then((res) => console.log(res))
 
       if (this.cnpj !== '') {
         this.updating = true
