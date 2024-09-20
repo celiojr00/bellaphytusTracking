@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    // baseURL: 'http://127.0.0.1:8000/',
+    //baseURL: 'http://127.0.0.1:8000/',
     //baseURL: 'https://bluevix01.ddns.net/',
     //baseURL: 'https://celeirobike.ddns.net/',
     //baseURL: 'https://globopharma2.ddns.net/',
@@ -19,9 +19,10 @@ const api = axios.create({
     //baseURL: 'https://theramartbrasil.ddns.net/',
     //baseURL: 'https://qualiflex02.ddns.net/',
     //baseURL: 'https://docesfardin.ddns.net/',
-    // baseURL: 'https://bellaphytus.ddns.net/',
-    // baseURL: 'https://orvelautomotor.ddns.net',
-    baseURL: 'https://konicaeconopro.ddns.net',
+    //baseURL: 'https://bellaphytus.ddns.net/',
+    //baseURL: 'https://orvelautomotor.ddns.net',
+    //baseURL: 'https://konicaeconopro.ddns.net',
+    baseURL: 'https://creativecopias.econocargo.net',
 
 
 
@@ -36,7 +37,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 6|ONqlo215CHCtZbiSsyicPzhaPCow48ZcuKCVYgZp`
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
 
-        // 'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84`  //oncovit
+        //'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84`   //oncovit
         //'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE`   // bluevix
         //'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt`   // celeirobike
         //'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG`   // globopharma
@@ -53,9 +54,10 @@ const api = axios.create({
         //'Authorization': `Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w`    // theramartbrasil
         //'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD`   // qualiflex02
         //'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`    // docesfardin
-        // 'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`   // bellaphytus
-        //  'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
-         'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN`  // konica
+        //'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`    // bellaphytus
+        //'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg`   // orvelautomotor
+        //'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN`   // konica
+        'Authorization': `Bearer 5|F8rw4gt8wVvvcUgO76cRToNfd23kypk96lwcg10G`    // creative
 
 
     },
