@@ -18,7 +18,7 @@
                          v-on:keyup.enter="pesqNota"
                          class="form-control"
                          type="text"
-                         placeholder="CNPJ/CPF Destinatário" />
+                         placeholder="CNPJ/CPF Destinatário (Não inserir caracteres)" />
                 </div>
               </div>
             </div>
