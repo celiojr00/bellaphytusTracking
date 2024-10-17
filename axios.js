@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
     //baseURL: 'http://127.0.0.1:8000/',
-    baseURL: 'https://bluevix01.ddns.net/',
+    //baseURL: 'https://bluevix01.ddns.net/',
     //baseURL: 'https://celeirobike.ddns.net/',
     //baseURL: 'https://globopharma2.ddns.net/',
     //baseURL: 'https://granlogprd.ddns.net/',
@@ -25,6 +25,7 @@ const api = axios.create({
     //baseURL: 'https://creativecopias.econocargo.net/',
     // baseURL: 'https://menfirst.econocargo.net/',
     // baseURL: 'https://bapautomotiva.econocargo.net/',
+    baseURL: 'https://fisioquantic.econocargo.net/',
 
 
 
@@ -40,7 +41,7 @@ const api = axios.create({
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
 
         //'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84`   //oncovit
-        'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE`   // bluevix
+        //'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE`   // bluevix
         //'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt`   // celeirobike
         //'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG`   // globopharma
         // 'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F` // granlog
@@ -62,7 +63,7 @@ const api = axios.create({
         //'Authorization': `Bearer 5|F8rw4gt8wVvvcUgO76cRToNfd23kypk96lwcg10G`    // creative
         //'Authorization': `Bearer 7|KTsMv4KlgCWG1vm2F7mNsrVLUbR535BMC80CaLi5`    // menfirst
         // 'Authorization': `Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg`    // barros pneus (bapautomotiva)
-        
+        'Authorization': `Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ`    // fisioquantic
 
 
     },
