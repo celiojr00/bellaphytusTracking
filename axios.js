@@ -34,8 +34,8 @@ const api = axios.create({
     // baseURL: 'https://goldendistri.econocargo.net/',
     // baseURL: 'https://atacadosaopaulo.ddns.net/',
     // baseURL: 'https://majmobilidade.econocargo.net/',
-     baseURL: 'https://ducoprint.econocargo.net/',
-    // baseURL: 'https://minatel.econocargo.net/',
+    // baseURL: 'https://ducoprint.econocargo.net/',
+     baseURL: 'https://minatel.econocargo.net/',
     // baseURL: 'https://airfresh.econocargo.net/',
     // baseURL: 'https://respirenim.econocargo.net/',
     // baseURL: 'https://maifredo.econocargo.net/',
@@ -89,8 +89,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 3|lJ34h7mODJvz9WqHi1z7COonChQ7o7uuRLigoeBd`  // golden
         // 'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF`  // atacadosaopaulo
         // 'Authorization': `Bearer 10|5HZeg0luZDDsbbDjJVGGzDqq1xBP20Bi6sRGrad5`  // maj
-         'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
-        // 'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
+        // 'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
+         'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
         // 'Authorization': `Bearer 11|WL6tUsnjBFToB7g0fJDHhSeDESRRlLkFYzAx9kRb`  // airfresh
         // 'Authorization': `Bearer 3|DbUney4TeFoRnNr1eOnMp6GGEO63uukj6k8oOxji`  // nim
         // 'Authorization': `Bearer 3|fotdjjb6bdoivmDDVrnEAjOjirqdD6jXyz0oYp8H`  // maifredo
