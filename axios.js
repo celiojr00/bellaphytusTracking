@@ -25,7 +25,8 @@ const api = axios.create({
     //baseURL: 'https://creativecopias.econocargo.net/',
     // baseURL: 'https://menfirst.econocargo.net/',
     // baseURL: 'https://bapautomotiva.econocargo.net/',
-    baseURL: 'https://fisioquantic.econocargo.net/',
+    // baseURL: 'https://fisioquantic.econocargo.net/',
+    baseURL: 'https://belfar.ddns.net/',
 
 
 
@@ -63,7 +64,9 @@ const api = axios.create({
         //'Authorization': `Bearer 5|F8rw4gt8wVvvcUgO76cRToNfd23kypk96lwcg10G`    // creative
         //'Authorization': `Bearer 7|KTsMv4KlgCWG1vm2F7mNsrVLUbR535BMC80CaLi5`    // menfirst
         // 'Authorization': `Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg`    // barros pneus (bapautomotiva)
-        'Authorization': `Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ`    // fisioquantic
+        // 'Authorization': `Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ`    // fisioquantic
+        'Authorization': `Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm`    // belfar
+
 
 
     },
