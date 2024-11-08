@@ -1,32 +1,48 @@
 import axios from 'axios'
 
 const api = axios.create({
-    //baseURL: 'http://127.0.0.1:8000/',
-    //baseURL: 'https://bluevix01.ddns.net/',
-    //baseURL: 'https://celeirobike.ddns.net/',
-    //baseURL: 'https://globopharma2.ddns.net/',
-    //baseURL: 'https://granlogprd.ddns.net/',
-    //baseURL: 'https://grupofesta.ddns.net/',
-    //baseURL: 'https://grupojpp.ddns.net/',
-    //baseURL: 'https://jsalog.ddns.net/',
-    //baseURL: 'https://lelloprint.ddns.net/',
-    //baseURL: 'https://macrolub.ddns.net/',
-    //baseURL: 'https://officetotaleconopro.ddns.net/',
-    //baseURL: 'https://ogcomercial.ddns.net/',
-    //baseURL: 'https://oncovit01.ddns.net/',
-    //baseURL: 'https://vitascience.ddns.net/',
-    //baseURL: 'https://tetrix.ddns.net/',
-    //baseURL: 'https://theramartbrasil.ddns.net/',
-    //baseURL: 'https://qualiflex02.ddns.net/',
-    //baseURL: 'https://docesfardin.ddns.net/',
-    //baseURL: 'https://bellaphytus.ddns.net/',
-    //baseURL: 'https://orvelautomotor.ddns.net/',
-    //baseURL: 'https://konicaeconopro.ddns.net/',
-    //baseURL: 'https://creativecopias.econocargo.net/',
+    // baseURL: 'http://127.0.0.1:8000/',
+    // baseURL: 'https://bluevix01.ddns.net/',
+    // baseURL: 'https://celeirobike.ddns.net/',
+    // baseURL: 'https://globopharma2.ddns.net/',
+    // baseURL: 'https://granlogprd.ddns.net/',
+    // baseURL: 'https://grupofesta.ddns.net/',
+    // baseURL: 'https://grupojpp.ddns.net/',
+    // baseURL: 'https://jsalog.ddns.net/',
+    // baseURL: 'https://lelloprint.ddns.net/',
+    // baseURL: 'https://macrolub.ddns.net/',
+    // baseURL: 'https://officetotaleconopro.ddns.net/',
+    // baseURL: 'https://ogcomercial.ddns.net/',
+    // baseURL: 'https://oncovit01.ddns.net/',
+    // baseURL: 'https://vitascience.ddns.net/',
+    // baseURL: 'https://tetrix.ddns.net/',
+    // baseURL: 'https://theramartbrasil.ddns.net/',
+    // baseURL: 'https://qualiflex02.ddns.net/',
+    // baseURL: 'https://docesfardin.ddns.net/',
+    // baseURL: 'https://bellaphytus.ddns.net/',
+    // baseURL: 'https://orvelautomotor.ddns.net/',
+    // baseURL: 'https://konicaeconopro.ddns.net/',
+    // baseURL: 'https://creativecopias.econocargo.net/',
     // baseURL: 'https://menfirst.econocargo.net/',
     // baseURL: 'https://bapautomotiva.econocargo.net/',
     // baseURL: 'https://fisioquantic.econocargo.net/',
-    baseURL: 'https://belfar.ddns.net/',
+    // baseURL: 'https://belfar.ddns.net/',
+     baseURL: 'https://arellimpecom.ddns.net/',
+    // baseURL: 'https://asclepharma.econocargo.net/',
+    // baseURL: 'https://cgwbrasil.econocargo.net/',
+    // baseURL: 'https://kamell.econocargo.net/',
+    // baseURL: 'https://goldendistri.econocargo.net/',
+    // baseURL: 'https://atacadosaopaulo.ddns.net/',
+    // baseURL: 'https://majmobilidade.econocargo.net/',
+    // baseURL: 'https://ducoprint.econocargo.net/',
+    // baseURL: 'https://minatel.econocargo.net/',
+    // baseURL: 'https://airfresh.econocargo.net/',
+    // baseURL: 'https://respirenim.econocargo.net/',
+    // baseURL: 'https://maifredo.econocargo.net/',
+    // baseURL: 'https://artmento.econocargo.net/',
+    // baseURL: 'https://mgerais.econocargo.net/',
+    // baseURL: 'https://brgfoods.econocargo.net/',
+    // baseURL: 'https://saopet.econocargo.net/',
 
 
 
@@ -65,7 +81,23 @@ const api = axios.create({
         //'Authorization': `Bearer 7|KTsMv4KlgCWG1vm2F7mNsrVLUbR535BMC80CaLi5`    // menfirst
         // 'Authorization': `Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg`    // barros pneus (bapautomotiva)
         // 'Authorization': `Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ`    // fisioquantic
-        'Authorization': `Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm`    // belfar
+        //'Authorization': `Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm`    // belfar
+        'Authorization': `Bearer 3|qAXrboOs14eUeL6B8WaAAdXvW6nMNGpwj6fXYlY4`  // arell
+        //'Authorization': `Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M`  // asclepharma
+        //'Authorization': `Bearer 4|uVuSmWpID1jdKbgBAfDtB6V57OIFbIQkAHMsfrWE`  // cgwbrasil
+        //'Authorization': `Bearer 8|qGHGM6jtsRtj8KFH0AeaxB4sOMiXTcwrjsyx8riG`  // kamell
+        //'Authorization': `Bearer 3|lJ34h7mODJvz9WqHi1z7COonChQ7o7uuRLigoeBd`  // golden
+        //'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF`  // atacadosaopaulo
+        //'Authorization': `Bearer 10|5HZeg0luZDDsbbDjJVGGzDqq1xBP20Bi6sRGrad5`  // maj
+        //'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
+        //'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
+        //'Authorization': `Bearer 11|WL6tUsnjBFToB7g0fJDHhSeDESRRlLkFYzAx9kRb`  // airfresh
+        //'Authorization': `Bearer 3|DbUney4TeFoRnNr1eOnMp6GGEO63uukj6k8oOxji`  // nim
+        //'Authorization': `Bearer 3|fotdjjb6bdoivmDDVrnEAjOjirqdD6jXyz0oYp8H`  // maifredo
+        //'Authorization': `Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr`  // artmento
+        //'Authorization': `Bearer 3|UNe0mN9gyrhzd94FW5IKroK6VNJ9NqI7LYeGUdvN`  // mgerais
+        //'Authorization': `Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P`  // brgfoods
+        //'Authorization': `Bearer 5|mC25ZBCtU26vSInKU4HOMKO5CZdQkdzYw6l244Kd`  // saopet
 
 
 
