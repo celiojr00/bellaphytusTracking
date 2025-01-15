@@ -4,7 +4,7 @@
     <div style="margin-bottom: -7ch">
       <div class="logo" style="display: flex; align-items: center; ">
         <NuxtLink @click="$router.push('/track-nota')">
-          <img src="/images/logo_econo_pro.png" style="max-width: 300px; position: relative; left: 1ch; margin-top: 21ch;" alt="">
+          <img :src="logoSrc" style="max-width: 300px; position: relative; left: 3ch; margin-top: 21ch;" alt="">
         </NuxtLink>
       </div>
       <div class="auto-container">
@@ -25,11 +25,29 @@
 
 <script>
   export default {
+    data() {
+      return {
+        logoSrc: null,
+      };
+    },
+
     name: "PageTitle",
     props: {
       title: {
         type: String
       }
+    },
+
+    mounted() {
+      // Verifica se a logo alternativa existe
+      const img = new Image();
+      img.src = '/images/logo_prd.png';
+      img.onload = () => {
+        this.logoSrc = '/images/logo_prd.png'; // Atualiza para a logo alternativa se existir
+      };
+      img.onerror = () => {
+        this.logoSrc = '/images/logo_econoPro.png';
+      };
     }
   }
 </script>

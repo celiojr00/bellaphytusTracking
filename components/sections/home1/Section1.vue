@@ -24,7 +24,7 @@
               <div class="content-box">
                 <div class="btn-box animate-3" style="position:absolute; top: 4ch; right: 66ch">
                   <div class="logo">
-                    <NuxtLink @click="$router.push('/track-nota')"><img src="/images/logo_econo_pro.png" style="max-width: 300px;" alt=""></NuxtLink>
+                    <NuxtLink @click="$router.push('/track-nota')"><img :src="logoSrc" style="max-width: 300px;" alt=""></NuxtLink>
                   </div>
                 </div>
 
@@ -133,7 +133,7 @@ export default {
 
   data() {
     return {
-
+      logoSrc: null,
     }
   },
 
@@ -144,6 +144,16 @@ export default {
   },
 
 
+  mounted() {
+    const img = new Image();
+    img.src = '/images/logo_prd.png';
+    img.onload = () => {
+      this.logoSrc = '/images/logo_prd.png';
+    };
+    img.onerror = () => {
+      this.logoSrc = '/images/logo_econoPro.png';
+    };
+  },
 
 
   methods: {
