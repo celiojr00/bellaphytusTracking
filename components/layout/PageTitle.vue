@@ -4,7 +4,7 @@
     <div style="margin-bottom: -7ch">
       <div class="logo" style="display: flex; align-items: center; ">
         <NuxtLink @click="$router.push('/track-nota')">
-          <img :src="logoSrc" style="max-width: 300px; position: relative; left: 3ch; margin-top: 21ch;" alt="">
+          <img :src="logoSrc" style="max-width: 250px; position: relative; left: 3ch; margin-top: 21ch;" alt="">
         </NuxtLink>
       </div>
       <div class="auto-container">
