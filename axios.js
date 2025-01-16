@@ -14,8 +14,8 @@ const api = axios.create({
     // baseURL: 'https://officetotaleconopro.ddns.net/',
     // baseURL: 'https://ogcomercial.ddns.net/',
     // baseURL: 'https://oncovit01.ddns.net/',
-    baseURL: 'https://vitascience.ddns.net/',
-    // baseURL: 'https://tetrix.ddns.net/',
+    // baseURL: 'https://vitascience.ddns.net/',
+    baseURL: 'https://tetrix.ddns.net/',
     // baseURL: 'https://theramartbrasil.ddns.net/',
     // baseURL: 'https://qualiflex02.ddns.net/',
     // baseURL: 'https://docesfardin.ddns.net/',
@@ -74,8 +74,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
         // 'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
         // 'Authorization': `Bearer 7|ctmFJYjo0926YsRYw7aOGcNNiaYetGdJJBjzMr1i`  // ogcomercial
-        'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF`// vitascience
-        // 'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
+        // 'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF`// vitascience
+        'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
         // 'Authorization': `Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w`  // theramartbrasil
         // 'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
         // 'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
