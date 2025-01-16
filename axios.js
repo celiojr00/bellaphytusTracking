@@ -17,8 +17,8 @@ const api = axios.create({
     // baseURL: 'https://vitascience.ddns.net/',
     // baseURL: 'https://tetrix.ddns.net/',
     // baseURL: 'https://theramartbrasil.ddns.net/',
-    baseURL: 'https://qualiflex02.ddns.net/',
-    // baseURL: 'https://docesfardin.ddns.net/',
+    // baseURL: 'https://qualiflex02.ddns.net/',
+    baseURL: 'https://docesfardin.ddns.net/',
     // baseURL: 'https://bellaphytus.ddns.net/',
     // baseURL: 'https://orvelautomotor.ddns.net/',
     // baseURL: 'https://konicaeconopro.ddns.net/',
@@ -77,8 +77,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF`// vitascience
         // 'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
         // 'Authorization': `Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w`  // theramartbrasil
-        'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
-        // 'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
+        // 'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
+        'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
         // 'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`  // bellaphytus
         // 'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
         // 'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN` // konica
