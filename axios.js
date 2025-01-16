@@ -10,8 +10,8 @@ const api = axios.create({
     // baseURL: 'https://grupojpp.ddns.net/',
     // baseURL: 'https://jsalog.ddns.net/',
     // baseURL: 'https://lelloprint.ddns.net/',
-    baseURL: 'https://macrolub.ddns.net/',
-    // baseURL: 'https://officetotaleconopro.ddns.net/',
+    // baseURL: 'https://macrolub.ddns.net/',
+    baseURL: 'https://officetotaleconopro.ddns.net/',
     // baseURL: 'https://ogcomercial.ddns.net/',
     // baseURL: 'https://oncovit01.ddns.net/',
     // baseURL: 'https://vitascience.ddns.net/',
@@ -71,8 +71,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
         // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
         // 'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r` // lelloprint
-        'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
-        // 'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
+        // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
+        'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
         // 'Authorization': `Bearer 7|ctmFJYjo0926YsRYw7aOGcNNiaYetGdJJBjzMr1i`  // ogcomercial
         // 'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF`// vitascience
         // 'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
