@@ -28,8 +28,8 @@ const api = axios.create({
     // baseURL: 'https://fisioquantic.econocargo.net/',
     // baseURL: 'https://belfar.ddns.net/',
     // baseURL: 'https://arellimpecom.ddns.net/',
-    baseURL: 'https://asclepharma.econocargo.net/',
-    // baseURL: 'https://cgwbrasil.econocargo.net/',
+    // baseURL: 'https://asclepharma.econocargo.net/',
+    baseURL: 'https://cgwbrasil.econocargo.net/',
     // baseURL: 'https://kamell.econocargo.net/',
     // baseURL: 'https://goldendistri.econocargo.net/',
     // baseURL: 'https://atacadosaopaulo.ddns.net/',
@@ -88,8 +88,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ` // fisioquantic
         // 'Authorization': `Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm` // belfar
         // 'Authorization': `Bearer 3|qAXrboOs14eUeL6B8WaAAdXvW6nMNGpwj6fXYlY4`  // arell
-        'Authorization': `Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M`  // asclepharma
-        // 'Authorization': `Bearer 4|uVuSmWpID1jdKbgBAfDtB6V57OIFbIQkAHMsfrWE`  // cgwbrasil
+        // 'Authorization': `Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M`  // asclepharma
+        'Authorization': `Bearer 4|uVuSmWpID1jdKbgBAfDtB6V57OIFbIQkAHMsfrWE`  // cgwbrasil
         // 'Authorization': `Bearer 8|qGHGM6jtsRtj8KFH0AeaxB4sOMiXTcwrjsyx8riG`  // kamell
         // 'Authorization': `Bearer 3|lJ34h7mODJvz9WqHi1z7COonChQ7o7uuRLigoeBd`  // golden
         // 'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF` // atacadosaopaulo
