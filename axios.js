@@ -4,8 +4,8 @@ const api = axios.create({
     // baseURL: 'http://127.0.0.1:8000/',
     // baseURL: 'https://bluevix01.ddns.net/',
     // baseURL: 'https://celeirobike.ddns.net/',
-    baseURL: 'https://globopharma2.ddns.net/',
-    // baseURL: 'https://granlogprd.ddns.net/',
+    // baseURL: 'https://globopharma2.ddns.net/',
+    baseURL: 'https://granlogprd.ddns.net/',
     // baseURL: 'https://grupofesta.ddns.net/',
     // baseURL: 'https://grupojpp.ddns.net/',
     // baseURL: 'https://jsalog.ddns.net/',
@@ -65,8 +65,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84` //oncovit
         // 'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE` // bluevix
         // 'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt` // celeirobike
-        'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG` // globopharma
-        // 'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F`// granlog
+        // 'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG` // globopharma
+        'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F`// granlog
         // 'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4` // grupofesta
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
         // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
