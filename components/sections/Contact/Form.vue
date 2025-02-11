@@ -67,10 +67,10 @@
                           </h6>
                         </NuxtLink>
                       </div>
-                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
+<!--                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
                         <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong>
                         R$ {{ formatDecimal(nota.valorliq) }}
-                      </p><br>
+                      </p>--><br>
                     </div>
                     <div>
                       <span style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Nome: </strong>
