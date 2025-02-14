@@ -19,7 +19,7 @@ const api = axios.create({
     // baseURL: 'https://tetrix.ddns.net/',
     // baseURL: 'https://theramartbrasil.ddns.net/',
     // baseURL: 'https://qualiflex02.ddns.net/',
-    baseURL: 'https://docesfardin.ddns.net/',
+    // baseURL: 'https://docesfardin.ddns.net/',
     // baseURL: 'https://bellaphytus.ddns.net/',
     // baseURL: 'https://orvelautomotor.ddns.net/',
     // baseURL: 'https://konicaeconopro.ddns.net/',
@@ -33,7 +33,7 @@ const api = axios.create({
     // baseURL: 'https://cgwbrasil.econocargo.net/',
     // baseURL: 'https://kamell.econocargo.net/',
     // baseURL: 'https://goldendistri.econocargo.net/',
-    // baseURL: 'https://atacadosaopaulo.ddns.net/',
+    baseURL: 'https://atacadosaopaulo.ddns.net/',
     // baseURL: 'https://majmobilidade.econocargo.net/',
     // baseURL: 'https://ducoprint.econocargo.net/',
     // baseURL: 'https://minatel.econocargo.net/',
@@ -80,7 +80,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
         // 'Authorization': `Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w`  // theramartbrasil
         // 'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
-        'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
+        // 'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
         // 'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`  // bellaphytus
         // 'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
         // 'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN` // konica
@@ -94,7 +94,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 4|uVuSmWpID1jdKbgBAfDtB6V57OIFbIQkAHMsfrWE`  // cgwbrasil
         // 'Authorization': `Bearer 8|qGHGM6jtsRtj8KFH0AeaxB4sOMiXTcwrjsyx8riG`  // kamell
         // 'Authorization': `Bearer 3|lJ34h7mODJvz9WqHi1z7COonChQ7o7uuRLigoeBd`  // golden
-        // 'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF` // atacadosaopaulo
+        'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF` // atacadosaopaulo
         // 'Authorization': `Bearer 10|5HZeg0luZDDsbbDjJVGGzDqq1xBP20Bi6sRGrad5` // maj
         // 'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
         // 'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
