@@ -46,8 +46,8 @@ const api = axios.create({
     // baseURL: 'https://saopet.econocargo.net/',
     // baseURL: 'https://cachear.econocargo.net/',
     // baseURL: 'https://donadeola.econocargo.net/',
-    // baseURL: 'https://roveredesign.econocargo.net/',
-    baseURL: 'https://3mko.econocargo.net/',
+    baseURL: 'https://roveredesign.econocargo.net/',
+    // baseURL: 'https://3mko.econocargo.net/',
     // baseURL: 'https://floranativabr.econocargo.net',
 
 
@@ -107,8 +107,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 5|mC25ZBCtU26vSInKU4HOMKO5CZdQkdzYw6l244Kd`  // saopet
         // 'Authorization': `Bearer 12|c7fOOIGE0VrIeJWFISMotT4LOvPEZt3EQCzCq3Ru` // cachear
         // 'Authorization': `Bearer 5|0758Bapqayu7WbpUmTgYv9qaFWPRODqePSyauRaQ`  // donadeola
-        // 'Authorization': `Bearer 10|sh7LT2uE7WWKSGOFzaJCm4KTEXXKCtMdf3dCziK7` // rovere
-        'Authorization': `Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK` // 3mkocosmeticos
+        'Authorization': `Bearer 10|sh7LT2uE7WWKSGOFzaJCm4KTEXXKCtMdf3dCziK7` // rovere
+        // 'Authorization': `Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK` // 3mkocosmeticos
         // 'Authorization': `Bearer 5|4eRuH36y9rsb88YoT6LbZKBEvu6L6ThqtRhTUlhs`    // floranativabr
 
 
