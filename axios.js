@@ -21,8 +21,8 @@ const api = axios.create({
     // baseURL: 'https://qualiflex02.ddns.net/',
     // baseURL: 'https://docesfardin.ddns.net/',
     // baseURL: 'https://bellaphytus.ddns.net/',
-    // baseURL: 'https://orvelautomotor.ddns.net/',
-    baseURL: 'https://konicaeconopro.ddns.net/',
+    baseURL: 'https://orvelautomotor.ddns.net/',
+    // baseURL: 'https://konicaeconopro.ddns.net/',
     // baseURL: 'https://creativecopias.econocargo.net/',
     // baseURL: 'https://menfirst.econocargo.net/',
     // baseURL: 'https://bapautomotiva.econocargo.net/',
@@ -82,8 +82,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
         // 'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
         // 'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`  // bellaphytus
-        // 'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
-        'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN` // konica
+        'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
+        // 'Authorization': `Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN` // konica
         // 'Authorization': `Bearer 5|F8rw4gt8wVvvcUgO76cRToNfd23kypk96lwcg10G`  // creative
         // 'Authorization': `Bearer 7|KTsMv4KlgCWG1vm2F7mNsrVLUbR535BMC80CaLi5`  // menfirst
         // 'Authorization': `Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg` // barros pneus (bapautomotiva)
