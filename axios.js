@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
     // baseURL: 'http://127.0.0.1:8000/',
-    baseURL: 'https://bluevix01.ddns.net/',
+    // baseURL: 'https://bluevix01.ddns.net/',
     // baseURL: 'https://celeirobike.ddns.net/',
     // baseURL: 'https://globopharma2.ddns.net/',
     // baseURL: 'https://granlogprd.ddns.net/',
@@ -13,7 +13,7 @@ const api = axios.create({
     // baseURL: 'https://macrolub.ddns.net/',
     // baseURL: 'https://officetotaleconopro.ddns.net/',
     // baseURL: 'https://ogcomercial.ddns.net/',
-    // baseURL: 'https://oncovit01.ddns.net/',
+    baseURL: 'https://oncovit01.ddns.net/',
     // baseURL: 'https://vitascience.ddns.net/',
     // baseURL: 'https://tetrix.ddns.net/',
     // baseURL: 'https://theramartbrasil.ddns.net/',
@@ -62,8 +62,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 6|ONqlo215CHCtZbiSsyicPzhaPCow48ZcuKCVYgZp`
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
 
-        // 'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84` //oncovit
-        'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE` // bluevix
+        'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84` //oncovit
+        // 'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE` // bluevix
         // 'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt` // celeirobike
         // 'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG` // globopharma
         // 'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F`// granlog
