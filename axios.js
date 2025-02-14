@@ -4,7 +4,7 @@ const api = axios.create({
     // baseURL: 'http://127.0.0.1:8000/',
     // baseURL: 'https://bluevix01.ddns.net/',
     // baseURL: 'https://celeirobike.ddns.net/',
-    baseURL: 'https://compose.ddns.net/',
+    // baseURL: 'https://compose.ddns.net/',
     // baseURL: 'https://globopharma2.ddns.net/',
     // baseURL: 'https://granlogprd.ddns.net/',
     // baseURL: 'https://grupofesta.ddns.net/',
@@ -48,7 +48,7 @@ const api = axios.create({
     // baseURL: 'https://donadeola.econocargo.net/',
     // baseURL: 'https://roveredesign.econocargo.net/',
     // baseURL: 'https://3mko.econocargo.net/',
-    // baseURL: 'https://floranativabr.econocargo.net',
+    baseURL: 'https://floranativabr.econocargo.net',
 
 
 
@@ -64,7 +64,7 @@ const api = axios.create({
         // 'Authorization': `Bearer ` + localStorage.getItem("token"),
 
         // 'Authorization': `Bearer 41|wdm5mpXBOiteT7OQ7Ga5upBCGMPy3qIWwGYx0f84` // oncovit
-        'Authorization': `Bearer 12|bTDvmgdkMxSwSXI1qAVhCXGIeNA46wDYwik2JpZc` // compose
+        // 'Authorization': `Bearer 12|bTDvmgdkMxSwSXI1qAVhCXGIeNA46wDYwik2JpZc` // compose
         // 'Authorization': `Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE` // bluevix
         // 'Authorization': `Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt` // celeirobike
         // 'Authorization': `Bearer 46|v75aZbw79NhvygdHLK9Qy4kpWEkbPgGnhn4F28XG` // globopharma
@@ -109,7 +109,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 5|0758Bapqayu7WbpUmTgYv9qaFWPRODqePSyauRaQ`  // donadeola
         // 'Authorization': `Bearer 10|sh7LT2uE7WWKSGOFzaJCm4KTEXXKCtMdf3dCziK7` // rovere
         // 'Authorization': `Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK` // 3mkocosmeticos
-        // 'Authorization': `Bearer 5|4eRuH36y9rsb88YoT6LbZKBEvu6L6ThqtRhTUlhs`    // floranativabr
+        'Authorization': `Bearer 5|4eRuH36y9rsb88YoT6LbZKBEvu6L6ThqtRhTUlhs`    // floranativabr
 
 
 
