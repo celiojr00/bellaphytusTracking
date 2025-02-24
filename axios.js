@@ -50,8 +50,8 @@ const api = axios.create({
     // baseURL: 'https://3mko.econocargo.net/',
     // baseURL: 'https://floranativabr.econocargo.net',
     // baseURL: 'https://arezes.econocargo.net',
-    baseURL: 'https://grupofioforte.econocargo.net',
-    // baseURL: 'https://jcdistribuidora.econocargo.net',
+    // baseURL: 'https://grupofioforte.econocargo.net',
+    baseURL: 'https://jcdistribuidora.econocargo.net',
 
 
 
@@ -114,8 +114,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK` // 3mkocosmeticos
         // 'Authorization': `Bearer 5|4eRuH36y9rsb88YoT6LbZKBEvu6L6ThqtRhTUlhs`  // floranativabr
         // 'Authorization': `Bearer 8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N`  // arezes
-        'Authorization': `Bearer 3|ta51MtFPeASn3tepihH4d84WBh5eNtkp849YApry`  // grupofioforte
-        // 'Authorization': `Bearer 4|6DkvQBhCDmHykF4PiYXknOMDriPbuskXdwD1Lnbr`  // jcdistribuidora
+        // 'Authorization': `Bearer 3|ta51MtFPeASn3tepihH4d84WBh5eNtkp849YApry`  // grupofioforte
+        'Authorization': `Bearer 4|6DkvQBhCDmHykF4PiYXknOMDriPbuskXdwD1Lnbr`  // jcdistribuidora
 
 
 
