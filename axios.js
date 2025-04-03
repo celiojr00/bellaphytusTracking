@@ -10,6 +10,7 @@ const api = axios.create({
     // baseURL: 'https://grupofesta.ddns.net/',
     // baseURL: 'https://grupojpp.ddns.net/',
     // baseURL: 'https://jsalog.ddns.net/',
+     baseURL: 'https://jsalog01.econocargo.net/',
     // baseURL: 'https://lelloprint.ddns.net/',
     // baseURL: 'https://macrolub.ddns.net/',
     // baseURL: 'https://officetotaleconopro.ddns.net/',
@@ -52,7 +53,7 @@ const api = axios.create({
     // baseURL: 'https://arezes.econocargo.net',
     // baseURL: 'https://grupofioforte.econocargo.net',
     // baseURL: 'https://jcdistribuidora.econocargo.net',
-    baseURL: 'https://lotus.econocargo.net',
+    // baseURL: 'https://lotus.econocargo.net',
 
 
 
@@ -75,6 +76,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4` // grupofesta
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
         // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
+        'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
         // 'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r` // lelloprint
         // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
         // 'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
@@ -116,7 +118,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N`  // arezes
         // 'Authorization': `Bearer 3|ta51MtFPeASn3tepihH4d84WBh5eNtkp849YApry`  // grupofioforte
         // 'Authorization': `Bearer 4|6DkvQBhCDmHykF4PiYXknOMDriPbuskXdwD1Lnbr`  // jcdistribuidora
-        'Authorization': `Bearer 4|79ZcTww9eHMdVN5euv4DuOXxpGXVSgJipxPQPox9` // lotuscomercial
+        // 'Authorization': `Bearer 4|79ZcTww9eHMdVN5euv4DuOXxpGXVSgJipxPQPox9` // lotuscomercial
 
 
 
