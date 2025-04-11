@@ -54,7 +54,8 @@ const api = axios.create({
     // baseURL: 'https://grupofioforte.econocargo.net',
     // baseURL: 'https://jcdistribuidora.econocargo.net',
     // baseURL: 'https://lotus.econocargo.net',
-    baseURL: 'https://bascel.econocargo.net/',
+    // baseURL: 'https://bascel.econocargo.net/',
+    baseURL: 'https://lynv.econocargo.net/',
 
 
 
@@ -120,7 +121,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 3|ta51MtFPeASn3tepihH4d84WBh5eNtkp849YApry`  // grupofioforte
         // 'Authorization': `Bearer 4|6DkvQBhCDmHykF4PiYXknOMDriPbuskXdwD1Lnbr`  // jcdistribuidora
         // 'Authorization': `Bearer 4|79ZcTww9eHMdVN5euv4DuOXxpGXVSgJipxPQPox9` // lotuscomercial
-        'Authorization': `Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA` // bascel
+        // 'Authorization': `Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA` // bascel
+        'Authorization': `Bearer 4|YfPhBf4HSo6VmHHGYTfbCG05Z0Ts0iozZBZ5CLNJ` // lynv
 
 
 
