@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="title-column col-lg-6 col-md-12">
                     <div class="title-box">
-                        <h4 class="title">Tronis only aim to <br>contribute well to your businesses</h4>
+                        <h4 class="title">EconoPro only aim to <br>contribute well to your businesses</h4>
                     </div>
                 </div>
 

@@ -2,7 +2,7 @@
     <section class="about-section-two style-two">
         <div class="anim-icons">
             <div class="float-image wow fadeInRight"><img src="/images/resource/float-img-4.png" alt=""></div>
-            <div class="float-text wow zoomInRight">Tronis</div>
+            <div class="float-text wow zoomInRight">EconoPro</div>
         </div>
 
         <div class="auto-container">

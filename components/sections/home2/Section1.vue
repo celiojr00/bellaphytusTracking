@@ -23,7 +23,7 @@
               <div class="content-box">
                 <div class="btn-box animate-3" style="position:absolute; top: 4ch; right: 66ch">
                   <div class="logo">
-                    <NuxtLink @click="$router.push('/track-nota')"><img src="/images/logo_econo_pro.png"
+                    <NuxtLink @click="$router.push('/track-nota')"><img src="/images/logo_econoPro.png"
                                                                         style="max-width: 230px; margin-right: 7ch;" alt=""></NuxtLink>
                   </div>
                 </div>

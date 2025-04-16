@@ -41,7 +41,7 @@
             <div class="main-box">
                 <div class="logo-box">
                     <div class="logo">
-                        <NuxtLink to="/"><img src="/images/logo_econo_pro.png" alt="" title="Tronis"></NuxtLink>
+                        <NuxtLink to="/"><img src="/images/logo_econoPro.png" alt="" title="EconoPro"></NuxtLink>
                     </div>
                 </div>
 
@@ -190,7 +190,7 @@
             <nav class="menu-box">
                 <div class="upper-box">
                     <div class="nav-logo">
-                        <NuxtLink to="/"><img src="/images/logo-2.png" alt="" title="Fesho"></NuxtLink>
+                        <NuxtLink to="/"><img src="/images/logo_econoPro.png" alt="" title="Fesho"></NuxtLink>
                     </div>
                     <div class="close-btn"><i class="icon fa fa-times"></i></div>
                 </div>
