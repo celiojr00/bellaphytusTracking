@@ -84,7 +84,11 @@
             <nav class="menu-box">
                 <div class="upper-box">
                     <div class="nav-logo">
+<<<<<<< Updated upstream
                         <NuxtLink to="/track-nota"><img src="/images/logo_econoPro.png" alt="" title="Fesho"></NuxtLink>
+=======
+                        <NuxtLink to="/track-nota"><img src="/images/logo_econoPro-2.png" alt="" title="Fesho"></NuxtLink>
+>>>>>>> Stashed changes
                     </div>
                     <div class="close-btn" @click="handleToggled"><i class="icon fa fa-times"></i></div>
                 </div>

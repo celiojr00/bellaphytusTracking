@@ -124,14 +124,6 @@ const api = axios.create({
         // 'Authorization': `Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA` // bascel
         // 'Authorization': `Bearer 4|YfPhBf4HSo6VmHHGYTfbCG05Z0Ts0iozZBZ5CLNJ` // lynv
 
-
-
-
-
-
-
-
-
     },
 })
 
