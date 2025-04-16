@@ -202,9 +202,10 @@
                 <ul class="navigation clearfix">
                     <!--Keep This Empty / Menu will come through Javascript-->
                 </ul>
+<!--
                 <ul class="contact-list-one">
                     <li>
-                        <!-- Contact Info Box -->
+                        &lt;!&ndash; Contact Info Box &ndash;&gt;
                         <div class="contact-info-box">
                             <i class="icon lnr-icon-phone-handset"></i>
                             <span class="title">Call Now</span>
@@ -212,7 +213,7 @@
                         </div>
                     </li>
                     <li>
-                        <!-- Contact Info Box -->
+                        &lt;!&ndash; Contact Info Box &ndash;&gt;
                         <div class="contact-info-box">
                             <span class="icon lnr-icon-envelope1"></span>
                             <span class="title">Send Email</span>
@@ -220,7 +221,7 @@
                         </div>
                     </li>
                     <li>
-                        <!-- Contact Info Box -->
+                        &lt;!&ndash; Contact Info Box &ndash;&gt;
                         <div class="contact-info-box">
                             <span class="icon lnr-icon-clock"></span>
                             <span class="title">Send Email</span>
@@ -228,6 +229,7 @@
                         </div>
                     </li>
                 </ul>
+-->
 
 
                 <ul class="social-links">
