@@ -190,11 +190,11 @@
             <nav class="menu-box">
                 <div class="upper-box">
                     <div class="nav-logo">
-<<<<<<< Updated upstream
-                        <NuxtLink to="/"><img src="/images/logo_econoPro.png" alt="" title="Fesho"></NuxtLink>
-=======
-                        <NuxtLink to="/"><img src="/images/logo_econoPro-2.png" alt="" title="Fesho"></NuxtLink>
->>>>>>> Stashed changes
+
+                        <NuxtLink to="/"><img src="/images/logo_econoPro.png" alt="" title="EconoPro"></NuxtLink>
+
+                        <NuxtLink to="/"><img src="/images/logo_econoPro-2.png" alt="" title="EconoPro"></NuxtLink>
+
                     </div>
                     <div class="close-btn"><i class="icon fa fa-times"></i></div>
                 </div>
