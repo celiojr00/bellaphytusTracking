@@ -39,8 +39,8 @@ const api = axios.create({
     // baseURL: 'https://ducoprint.econocargo.net/',
     // baseURL: 'https://minatel.econocargo.net/',
     // baseURL: 'https://airfresh.econocargo.net/',
-    baseURL: 'https://respirenim.econocargo.net/',
-    // baseURL: 'https://maifredo.econocargo.net/',
+    // baseURL: 'https://respirenim.econocargo.net/',
+    baseURL: 'https://maifredo.econocargo.net/',
     // baseURL: 'https://artmento.econocargo.net/',
     // baseURL: 'https://mgerais.econocargo.net/',
     // baseURL: 'https://brgfoods.econocargo.net/',
@@ -106,8 +106,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
         // 'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
         // 'Authorization': `Bearer 11|WL6tUsnjBFToB7g0fJDHhSeDESRRlLkFYzAx9kRb` // airfresh
-        'Authorization': `Bearer 3|DbUney4TeFoRnNr1eOnMp6GGEO63uukj6k8oOxji`  // nim
-        // 'Authorization': `Bearer 3|fotdjjb6bdoivmDDVrnEAjOjirqdD6jXyz0oYp8H`  // maifredo
+        // 'Authorization': `Bearer 3|DbUney4TeFoRnNr1eOnMp6GGEO63uukj6k8oOxji`  // nim
+        'Authorization': `Bearer 3|fotdjjb6bdoivmDDVrnEAjOjirqdD6jXyz0oYp8H`  // maifredo
         // 'Authorization': `Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr`  // artmento
         // 'Authorization': `Bearer 3|UNe0mN9gyrhzd94FW5IKroK6VNJ9NqI7LYeGUdvN`  // mgerais
         // 'Authorization': `Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P`  // brgfoods
