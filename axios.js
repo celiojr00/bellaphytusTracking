@@ -9,8 +9,8 @@ const api = axios.create({
     // baseURL: 'https://granlogprd.ddns.net/',
     // baseURL: 'https://grupofesta.ddns.net/',
     // baseURL: 'https://grupojpp.ddns.net/',
-    baseURL: 'https://jsalog.ddns.net/',
-    //  baseURL: 'https://jsalog01.econocargo.net/',
+    // baseURL: 'https://jsalog.ddns.net/',
+     baseURL: 'https://jsalog01.econocargo.net/',
     // baseURL: 'https://lelloprint.ddns.net/',
     // baseURL: 'https://macrolub.ddns.net/',
     // baseURL: 'https://officetotaleconopro.ddns.net/',
@@ -77,8 +77,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F`// granlog
         // 'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4` // grupofesta
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
-        'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
-        // 'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
+        // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
+        'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
         // 'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r` // lelloprint
         // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
         // 'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
