@@ -10,7 +10,7 @@ const api = axios.create({
     // baseURL: 'https://grupofesta.ddns.net/',
     // baseURL: 'https://grupojpp.ddns.net/',
     // baseURL: 'https://jsalog.ddns.net/',
-     baseURL: 'https://jsalog01.econocargo.net/',
+    //  baseURL: 'https://jsalog01.econocargo.net/',
     // baseURL: 'https://lelloprint.ddns.net/',
     // baseURL: 'https://macrolub.ddns.net/',
     // baseURL: 'https://officetotaleconopro.ddns.net/',
@@ -19,7 +19,7 @@ const api = axios.create({
     // baseURL: 'https://vitascience.ddns.net/',
     // baseURL: 'https://tetrix.ddns.net/',
     // baseURL: 'https://theramartbrasil.ddns.net/',
-    // baseURL: 'https://qualiflex02.ddns.net/',
+    baseURL: 'https://qualiflex02.ddns.net/',
     // baseURL: 'https://docesfardin.ddns.net/',
     // baseURL: 'https://bellaphytus.ddns.net/',
     // baseURL: 'https://orvelautomotor.ddns.net/',
@@ -78,7 +78,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4` // grupofesta
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
         // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
-        'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
+        // 'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
         // 'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r` // lelloprint
         // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
         // 'Authorization': `Bearer 37|2QyK4bPGZtByEOvBKMXibNsUKaKeTPQI5WlpQfLw` // officetotal
@@ -86,7 +86,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF`// vitascience
         // 'Authorization': `Bearer 23|8mTuUto8B6edqSAD6I6wic1flQCZXZDvL9BNcHEL` // tetrix
         // 'Authorization': `Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w`  // theramartbrasil
-        // 'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
+        'Authorization': `Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD` // qualiflex02
         // 'Authorization': `Bearer 4|s5zs0qYW6nCkPqnTFNLfuwvPQrQjoqGOgIZK1fvs`  // docesfardin
         // 'Authorization': `Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx`  // bellaphytus
         // 'Authorization': `Bearer 13|wXdVWyPUMA6cjlOXfJVZrzg3vKLLvwtL6VBOOWsg` // orvelautomotor
