@@ -9,7 +9,7 @@ const api = axios.create({
     // baseURL: 'https://granlogprd.ddns.net/',
     // baseURL: 'https://grupofesta.ddns.net/',
     // baseURL: 'https://grupojpp.ddns.net/',
-    // baseURL: 'https://jsalog.ddns.net/',
+    baseURL: 'https://jsalog.ddns.net/',
     //  baseURL: 'https://jsalog01.econocargo.net/',
     // baseURL: 'https://lelloprint.ddns.net/',
     // baseURL: 'https://macrolub.ddns.net/',
@@ -34,7 +34,7 @@ const api = axios.create({
     // baseURL: 'https://cgwbrasil.econocargo.net/',
     // baseURL: 'https://kamell.econocargo.net/',
     // baseURL: 'https://goldendistri.econocargo.net/',
-    baseURL: 'https://atacadosaopaulo.ddns.net/',
+    // baseURL: 'https://atacadosaopaulo.ddns.net/',
     // baseURL: 'https://majmobilidade.econocargo.net/',
     // baseURL: 'https://ducoprint.econocargo.net/',
     // baseURL: 'https://minatel.econocargo.net/',
@@ -77,7 +77,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 127|SOnmdzBkgD7R9a71ixekLqCqR90YS1aGA3vMNX2F`// granlog
         // 'Authorization': `Bearer 54|rjbDlp9WctCSDkAYLNNBVQ0Itf3qwUakjqidbjG4` // grupofesta
         // 'Authorization': `Bearer 128|v9JgUab08hJJ0w6p9cMYg5kLyf2qe8uiw77qUEyg`// grupojpp
-        // 'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
+        'Authorization': `Bearer 52|UXT7tt0WC7etnjpIDpQnLY1e4IP7xwiKZSjh2Zch` // jsalog
         // 'Authorization': `Bearer 3|ljvwaDfOJKyduyUDORwcbhdrPrjh6GIDva7nYqhg` // jsalog01
         // 'Authorization': `Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r` // lelloprint
         // 'Authorization': `Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa` // macrolub
@@ -101,7 +101,7 @@ const api = axios.create({
         // 'Authorization': `Bearer 4|uVuSmWpID1jdKbgBAfDtB6V57OIFbIQkAHMsfrWE`  // cgwbrasil
         // 'Authorization': `Bearer 8|qGHGM6jtsRtj8KFH0AeaxB4sOMiXTcwrjsyx8riG`  // kamell
         // 'Authorization': `Bearer 3|lJ34h7mODJvz9WqHi1z7COonChQ7o7uuRLigoeBd`  // golden
-        'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF` // atacadosaopaulo
+        // 'Authorization': `Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF` // atacadosaopaulo
         // 'Authorization': `Bearer 10|5HZeg0luZDDsbbDjJVGGzDqq1xBP20Bi6sRGrad5` // maj
         // 'Authorization': `Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9`  // ducoprint
         // 'Authorization': `Bearer 5|34ZQBnI31A8oj1asLwtcAem42G7xZYNUD03dkx2U`  // minatel
