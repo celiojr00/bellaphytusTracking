@@ -42,8 +42,8 @@ const api = axios.create({
     // baseURL: 'https://respirenim.econocargo.net/',
     // baseURL: 'https://maifredo.econocargo.net/',
     // baseURL: 'https://artmento.econocargo.net/',
-    baseURL: 'https://mgerais.econocargo.net/',
-    // baseURL: 'https://brgfoods.econocargo.net/',
+    // baseURL: 'https://mgerais.econocargo.net/',
+    baseURL: 'https://brgfoods.econocargo.net/',
     // baseURL: 'https://saopet.econocargo.net/',
     // baseURL: 'https://cachear.econocargo.net/',
     // baseURL: 'https://donadeola.econocargo.net/',
@@ -109,8 +109,8 @@ const api = axios.create({
         // 'Authorization': `Bearer 3|DbUney4TeFoRnNr1eOnMp6GGEO63uukj6k8oOxji`  // nim
         // 'Authorization': `Bearer 3|fotdjjb6bdoivmDDVrnEAjOjirqdD6jXyz0oYp8H`  // maifredo
         // 'Authorization': `Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr`  // artmento
-        'Authorization': `Bearer 3|UNe0mN9gyrhzd94FW5IKroK6VNJ9NqI7LYeGUdvN`  // mgerais
-        // 'Authorization': `Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P`  // brgfoods
+        // 'Authorization': `Bearer 3|UNe0mN9gyrhzd94FW5IKroK6VNJ9NqI7LYeGUdvN`  // mgerais
+        'Authorization': `Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P`  // brgfoods
         // 'Authorization': `Bearer 5|mC25ZBCtU26vSInKU4HOMKO5CZdQkdzYw6l244Kd`  // saopet
         // 'Authorization': `Bearer 12|c7fOOIGE0VrIeJWFISMotT4LOvPEZt3EQCzCq3Ru` // cachear
         // 'Authorization': `Bearer 5|0758Bapqayu7WbpUmTgYv9qaFWPRODqePSyauRaQ`  // donadeola
