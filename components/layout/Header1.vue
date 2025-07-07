@@ -5,8 +5,8 @@
     <header class="main-header header-style-one" :class="{ 'moblie-search-active': isSearch }">
         <!-- Header Top -->
         <div class="header-top" style=" width: 100%; margin-left: 0px">
-            <div class="top-left">
-                <!-- Info List -->
+<!--            <div class="top-left">
+                &lt;!&ndash; Info List &ndash;&gt;
                 <ul class="list-style-one">
                     <li><i class="fa fa-map-marker-alt"></i> Shopping Monserrat, Serra - ES</li>
                     <li><i class="fa fa-clock"></i> Seg - Sex: 8am - 18pm</li>
@@ -14,9 +14,9 @@
                         <NuxtLink to="tel:+92(8800)87890">27.3020-7888</NuxtLink>
                     </li>
                 </ul>
-            </div>
+            </div>-->
 
-            <div class="top-right"  style="position:absolute; right: 2ch">
+<!--            <div class="top-right"  style="position:absolute; right: 2ch">
               <ul class="social-icon-one">
                 <li>
                   <NuxtLink to="#"><span class="fab fa-facebook-square" target="_blank" rel="noopener" no-rel></span></NuxtLink>
@@ -35,7 +35,7 @@
                 </li>
                 
               </ul>
-            </div>
+            </div>-->
         </div>
         <!-- Header Top -->
 
