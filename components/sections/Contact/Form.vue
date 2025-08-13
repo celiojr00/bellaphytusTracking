@@ -317,55 +317,60 @@ export default {
           console.log('then axios rastreio nfAbe')
           console.log(res.data)
 
-          this.notaData = res.data[0]
-          this.notaStatusData = res.data[1]
+          if(res.data.length > 0){
+            console.log('tratando dados da nota...')
 
-          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
-            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+            this.notaData = res.data[0]
+            this.notaStatusData = res.data[1]
 
-            /*if (this.notaStatusData.length > 0) {
-              const maxSeqItem = this.notaStatusData[0];
+            if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+              this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
 
-              let ultdescricao = maxSeqItem.descricao;
-              let lineBreakPosition = ultdescricao.indexOf('\n');
+              /*if (this.notaStatusData.length > 0) {
+                const maxSeqItem = this.notaStatusData[0];
 
-              if (lineBreakPosition !== -1) {
-                this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
-                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                let ultdescricao = maxSeqItem.descricao;
+                let lineBreakPosition = ultdescricao.indexOf('\n');
+
+                if (lineBreakPosition !== -1) {
+                  this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+                      '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                } else {
+                  this.descricaoMaxSeq = ultdescricao +
+                      '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                }
+
+                //  this.descricaoMaxSeq = maxSeqItem.descricao;
+
               } else {
-                this.descricaoMaxSeq = ultdescricao +
-                    '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+                this.descricaoMaxSeq = "Não encontrado.";
+              }*/
+
+              const item = this.notaData;
+              // const maxSeqItem = this.notaStatusData[0];
+              this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+              if(item.dtpreventr === 'SEM PREVISAO'){
+                this.dataPrev = item.dtpreventr;
+              }else{
+                this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
               }
 
-              //  this.descricaoMaxSeq = maxSeqItem.descricao;
+            } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+              this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
 
             } else {
-              this.descricaoMaxSeq = "Não encontrado.";
-            }*/
-
-            const item = this.notaData;
-            // const maxSeqItem = this.notaStatusData[0];
-            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-            if(item.dtpreventr === 'SEM PREVISAO'){
-              this.dataPrev = item.dtpreventr;
-            }else{
-              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+              this.statusEntrega = 'Documento não encontrado'
             }
 
-          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
-            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
-
-
+            let contSeq = 0
+            this.notaStatusData.forEach((value) => {
+              value['seq'] = this.notaStatusData.length - contSeq
+              contSeq++
+            })
           } else {
-            this.statusEntrega = 'Documento não encontrado'
+            console.log('return null')
           }
-
-          let contSeq = 0
-          this.notaStatusData.forEach((value) => {
-            value['seq'] = this.notaStatusData.length - contSeq
-            contSeq++
-          })
-
         });
       } catch (error) {
         console.error("Erro ao buscar dados da API", error);
@@ -405,62 +410,66 @@ export default {
         }).then((res) => {
           console.log('then axios rastreio nfsAbe')
           console.log(res.data)
-          this.dataListNotas = res.data[0]
-          this.notaData = res.data[1]
-          this.notaStatusData = res.data[2]
 
-          console.log('dataListNotas')
-          console.log(this.dataListNotas)
+          if(res.data.length > 0) {
+            this.dataListNotas = res.data[0]
+            this.notaData = res.data[1]
+            this.notaStatusData = res.data[2]
 
-          this.updating = false
-          if (this.dataListNotas.length === 0) {
-            $toast.open({
-              type: "info",
-              message: '<span class="text-white">Desculpe, nenhum documento foi encontrado!</span>',
-              duration: 3000
-            })
+            console.log('dataListNotas')
+            console.log(this.dataListNotas)
+
+            this.updating = false
+            if (this.dataListNotas.length === 0) {
+              $toast.open({
+                type: "info",
+                message: '<span class="text-white">Desculpe, nenhum documento foi encontrado!</span>',
+                duration: 3000
+              })
+            }
+
+            if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
+              this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
+
+              // if (this.notaStatusData.length > 0) {
+              //   const maxSeqItem = this.notaStatusData[0];
+              //
+              //   let ultdescricao = maxSeqItem.descricao;
+              //   let lineBreakPosition = ultdescricao.indexOf('\n');
+              //
+              //   if (lineBreakPosition !== -1) {
+              //     this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
+              //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              //   } else {
+              //     this.descricaoMaxSeq = ultdescricao +
+              //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
+              //   }
+              //
+              // } else {
+              //   this.descricaoMaxSeq = "Não encontrado.";
+              // }
+
+              const item = this.notaData;
+              this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
+              this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
+
+            } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
+              this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
+
+            } else {
+              this.statusEntrega = 'Documento não encontrado'
+            }
+
+            if(this.notaStatusData){
+              let contSeq = 0
+              this.notaStatusData.forEach((value) => {
+                value['seq'] = this.notaStatusData.length - contSeq
+                contSeq++
+              })
+            }
+          } else{
+            console.log('sem dados para processar...')
           }
-
-          if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
-            this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
-
-            // if (this.notaStatusData.length > 0) {
-            //   const maxSeqItem = this.notaStatusData[0];
-            //
-            //   let ultdescricao = maxSeqItem.descricao;
-            //   let lineBreakPosition = ultdescricao.indexOf('\n');
-            //
-            //   if (lineBreakPosition !== -1) {
-            //     this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
-            //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-            //   } else {
-            //     this.descricaoMaxSeq = ultdescricao +
-            //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-            //   }
-            //
-            // } else {
-            //   this.descricaoMaxSeq = "Não encontrado.";
-            // }
-
-            const item = this.notaData;
-            this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
-            this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
-
-          } else if (this.notaData && this.notaData.codigo && this.notaData.codigo !== '') {
-            this.statusEntrega = 'Documento encontrado, nota fiscal emitida.'
-
-          } else {
-            this.statusEntrega = 'Documento não encontrado'
-          }
-
-          if(this.notaStatusData){
-            let contSeq = 0
-            this.notaStatusData.forEach((value) => {
-              value['seq'] = this.notaStatusData.length - contSeq
-              contSeq++
-            })
-          }
-
 
         })
 

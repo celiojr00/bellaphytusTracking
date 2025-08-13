@@ -1,15 +1,7 @@
-<!--<template>-->
-<!--  <SectionsHome2Section1 :lista-resultados="listaResultados" :nota-data="notaData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao" :data-Prev="dataPrev" :count-Down="countDown"/>-->
-<!--</template>-->
-<!--<script setup lang="ts">-->
-<!--import {Swiper, SwiperSlide} from "swiper/swiper-vue";-->
-<!--</script>-->
-
 <script>
 import api from "../axios.js";
 import {Autoplay, Navigation, Pagination} from "swiper/modules"
 import {Swiper, SwiperSlide} from "swiper/vue"
-import moment from 'moment';
 
 export default {
   components: {
@@ -47,7 +39,24 @@ export default {
         volRomaConferirMes: 0,
         volRomaConferirSem: 0,
         volRomaConferirDia: 0,
+        pedEmElabMes: 0,
+        pedEmElabSem: 0,
+        pedEmElabDia: 0,
+        pedConfMes: 0,
+        pedConfSem: 0,
+        pedConfDia: 0,
+        pedFatMes: 0,
+        pedFatSem: 0,
+        pedFatDia: 0,
+        pedCanMes: 0,
+        pedCanSem: 0,
+        pedCanDia: 0,
       },
+
+      totalPedDia: null,
+      totalPedSem: null,
+      totalPedMes: null,
+      flagBaseDash: false,
     }
   },
 
@@ -73,6 +82,9 @@ export default {
           this.listaResultados = res.data;
           console.log(' this.listaResultados')
           console.log(this.listaResultados)
+          this.totalPedDia = Number(this.listaResultados.pedEmElabDia) + Number(this.listaResultados.pedFatDia) + Number(this.listaResultados.pedConfDia)
+          this.totalPedSem = Number(this.listaResultados.pedEmElabSem) + Number(this.listaResultados.pedFatSem) + Number(this.listaResultados.pedConfSem)
+          this.totalPedMes = Number(this.listaResultados.pedEmElabMes) + Number(this.listaResultados.pedFatMes) + Number(this.listaResultados.pedConfMes)
         }
 
       }).catch(error => {
@@ -117,18 +129,29 @@ export default {
           <div class="row">
             <div class="content-column col-lg-7 col-md-12 col-sm-12">
               <div class="content-box">
-                <!--Logo EconoPro no topo-->
-                <!--                <div class="btn-box animate-3" style="position:absolute; top: 4ch; right: 66ch">
-                    <div class="logo">
-                      <img src="/images/logo_econo_pro.png" style="max-width: 230px; margin-right: 7ch;" alt="">
-                    </div>
-                  </div>-->
-
                 <!--Logo Dashboard Produção no topo-->
                 <div style=" margin-left: -41ch; margin-top: -10ch">
                   <h6 class="title animate-3" style="right: -90px; top: -84px">
                     <span class="colored" style="font-size: 38px"> Dashboard</span>
-                    <span class="badge badge-soft-white overlay-text" style="top: -12px; padding: 5px; right: -190px"> Produção</span>
+
+                    <span class="badge badge-soft-white overlay-text" style="top: -12px;
+                          padding-top: 8px; padding-bottom: 5px; padding-right: 100px; padding-left: 5px;  right: -190px">
+                      Produção
+
+
+                      <p class="form-check form-switch" style="position: absolute ; left: 110px; color: #111; font-size: 12px; top: -1px">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            size="sm"
+                            v-model="flagBaseDash"
+                        >
+                        <label class="form-check-label" style="position: relative ;right: 2px; top: -2px; letter-spacing: 0.5px;">
+                          <strong>{{ flagBaseDash === true ? 'Orçamento' : 'Nota Fiscal' }}</strong>
+                        </label>
+                      </p>
+
+                    </span>
                   </h6>
                 </div>
               </div>
@@ -154,14 +177,44 @@ export default {
                         <h4 class="badge badge-soft-warnig font-size-32" style="padding: 3px 100px; margin-left: -20px; margin-right: 20px"> DIA </h4> <br>
                         <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
-                          <h4 class="font-size-70" style="color: #d39d02; margin-right: -21.6ch; margin-top: 35px">{{formatInteger(listaResultados.totalEmitDia)}}
-                            <p style="color: #d39d02; font-size: 36px; margin-left: 260px; margin-top: -74px">NF's</p>
+                          <h4 class="font-size-70" style="color: #d39d02; margin-right: -21.6ch; margin-top: 35px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitDia) : formatInteger(totalPedDia)}}
+                            <p style="color: #d39d02; font-size: 36px; margin-left: 260px; margin-top: -74px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
                           </h4>
                         </div>
                       </div>
 
+                      <!-- Pedido -->
+                      <div v-if="flagBaseDash === true" class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch;">
+                        <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Em Aberto </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #d39d02; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedEmElabDia)}}</h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 25.5ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Faturado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #d39d02; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedFatDia)}}</h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 35.2ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Confirmado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #d39d02; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedConfDia)}}</h4>
+                          </div>
+                        </div>
+                      </div>
+
                       <!-- Notas -->
-                      <div class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch;">
+                      <div v-if="flagBaseDash === false" class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch;">
                         <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
                           <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
                           <div>
@@ -188,38 +241,8 @@ export default {
                             <h4 style="color: #d39d02; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.nfConfDia)}}</h4>
                           </div>
                         </div>
-
-                        <!-- Pedidos Layout antigo -->
-                        <!--                        <div class="separator-line-warnig" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoAssocDia)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoEmbarDia)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div style="margin-top: 0ch">
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaExpedDia)}}</h4>
-                          </div>
-                        </div>-->
-
                       </div>
+
                     </div>
                   </div>
 
@@ -294,14 +317,44 @@ export default {
                         <h4 class="badge badge-soft-info font-size-32" style="padding: 3px 68px; margin-left: -20px; margin-right: 20px"> SEMANA </h4> <br>
                         <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
-                          <h4 class="font-size-70" style="color: #0c5460;; margin-right: -21.6ch; margin-top: 30px">{{formatInteger(listaResultados.totalEmitSem)}}
-                            <p style="color: #0c5460; font-size: 36px; margin-left: 260px; margin-top: -75px">NF's</p>
+                          <h4 class="font-size-70" style="color: #0c5460;; margin-right: -21.6ch; margin-top: 30px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitSem) : formatInteger(totalPedSem)}}
+                            <p style="color: #0c5460; font-size: 36px; margin-left: 260px; margin-top: -75px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
                           </h4>
                         </div>
                       </div>
 
-                      <!-- Notas -->
-                      <div class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch">
+                      <!-- Pedido -->
+                      <div v-if="flagBaseDash === true" class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch">
+                        <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Em Aberto </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #0c5460; font-size: 70px; margin-top: -34px;"> {{formatInteger(listaResultados.pedEmElabSem)}} </h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 25.5ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Faturado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #0c5460; font-size: 70px; margin-top: -34px;"> {{formatInteger(listaResultados.pedFatSem)}} </h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 35.2ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Confirmado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #0c5460; font-size: 70px; margin-top: -34px;"> {{formatInteger(listaResultados.pedConfSem)}} </h4>
+                          </div>
+                        </div>
+                      </div>
+
+                        <!-- Notas -->
+                      <div v-if="flagBaseDash === false" class="d-flex justify-content-center col-12" style="position: absolute; margin-left: -7.7ch">
                         <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
                           <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
                           <div>
@@ -328,36 +381,6 @@ export default {
                             <h4 style="color: #0c5460; font-size: 70px; margin-top: -34px;"> {{formatInteger(listaResultados.nfConfSem)}} </h4>
                           </div>
                         </div>
-
-                        <!-- Pedidos -->
-                        <!--                        <div class="separator-line-info" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaNaoAssocSem)}} </h4>
-                          </div>
-                        </div>
-
-                        <div  class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaNaoEmbarSem)}} </h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaExpedSem)}} </h4>
-                          </div>
-                        </div>-->
                       </div>
                     </div>
                   </div>
@@ -437,14 +460,45 @@ export default {
                         <h4 class="badge badge-soft-success font-size-32" style="padding: 3px 95px; margin-left: -20px; margin-right: 20px"> MÊS </h4> <br>
                         <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
-                          <h4 class="font-size-70" style="color: #155724;; margin-right: -21.6ch; margin-top: 30px">{{formatInteger(listaResultados.totalEmitMes)}}
-                            <p style="color: #155724; font-size: 36px; margin-left: 260px; margin-top: -74px">NF's</p>
+                          <h4 class="font-size-70" style="color: #155724;; margin-right: -21.6ch; margin-top: 30px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitMes) :  formatInteger(totalPedMes)}}
+                            <p style="color: #155724; font-size: 36px; margin-left: 260px; margin-top: -74px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
                           </h4>
                         </div>
                       </div>
 
+
+                      <!-- Pedido -->
+                      <div v-if="flagBaseDash === true" class="d-flex justify-content-center col-12" style="position: absolute;margin-left: -7.7ch">
+                        <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Em Aberto </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #155724; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedEmElabMes)}}</h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 25.5ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Faturado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #155724; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedFatMes)}}</h4>
+                          </div>
+                        </div>
+
+                        <div class="col-4" style="position: absolute; left: 35.2ch; margin-top: 0.3ch">
+                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
+                          <div>
+                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Pedido Confirmado </h4>
+                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
+                            <h4 style="color: #155724; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.pedConfMes)}}</h4>
+                          </div>
+                        </div>
+                      </div>
+
                       <!-- Notas -->
-                      <div class="d-flex justify-content-center col-12" style="position: absolute;margin-left: -7.7ch">
+                      <div v-if="flagBaseDash === false" class="d-flex justify-content-center col-12" style="position: absolute;margin-left: -7.7ch">
                         <div class="col-4" style="position: absolute; left: 16ch; margin-top: 0.3ch">
                           <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
                           <div>
@@ -471,36 +525,6 @@ export default {
                             <h4 style="color: #155724; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.nfConfMes)}}</h4>
                           </div>
                         </div>
-
-                        <!-- Pedidos -->
-                        <!--                        <div  class="separator-line-success" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoAssocMes)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoEmbarMes)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaExpedMes)}}</h4>
-                          </div>
-                        </div>-->
                       </div>
                     </div>
                   </div>
@@ -562,48 +586,7 @@ export default {
                   </div>
                 </div>
               </div>
-
               <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <!--MODELO ANTIGO-->
-              <!--<div class="features-column col-lg-6 col-md-12" style="margin-bottom: 0ch; width: 48ch; height: 38ch">
-                  <div class="row">
-                    <div class="d-flex" style="margin-left: -4ch">
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 1ch;">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-courier" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -6px;position: absolute;"> NF Em Aberto </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -2px">(Não Associadas) </p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -29px; text-align: center">
-                            <h4 class="color2 font-size-78">128</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 1ch">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-box-3" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -17px;position: absolute;"> NF Em Produção </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -5px"><br><br><br><br></p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -32px; text-align: center">
-                            <h4 class="color2 font-size-78">46</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 0ch">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-insurance-3" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -4px;position: absolute;"> NF Conferida </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -5px"><br><br><br><br></p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -34px; text-align: center">
-                            <h4 class="color2 font-size-78">82</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>-->
             </div>
           </div>
 
@@ -616,16 +599,6 @@ export default {
   </section>
 </template>
 <style scoped>
-
-
-.custom-feature-block {
-  width: 160px;
-  height: auto;
-}
-
-.custom-inner {
-  padding: 30px;
-}
 
 .colored {
   position: absolute;
@@ -676,40 +649,6 @@ export default {
 .overlay-text {
   position: relative;
   z-index: 1;
-}
-
-.divider {
-  margin-left: 40px;
-  border-left: 2px solid #ccc;
-  padding-left: 40px;
-  margin-top: 16px;
-}
-
-.separator-line-success {
-
-  border-left: 1.8px solid #155724;
-  padding-left: 65px;
-  margin-top: 10px;
-  margin-bottom: 50px;
-
-}
-
-.separator-line-info {
-
-  border-left: 1.8px solid #0c5460;
-  padding-left: 65px;
-  margin-top: 10px;
-  margin-bottom: 50px;
-
-}
-
-.separator-line-warnig {
-
-  border-left: 1.8px solid #856404;
-  padding-left: 65px;
-  margin-top: 10px;
-  margin-bottom: 50px;
-
 }
 
 </style>
