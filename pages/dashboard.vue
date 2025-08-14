@@ -68,6 +68,10 @@ export default {
 
   mounted() {
     this.atualizaList();
+    const savedFlag = localStorage.getItem('flagBaseDash');
+    if (savedFlag !== null) {
+      this.flagBaseDash = savedFlag === 'true';
+    }
   },
 
   methods: {
@@ -90,6 +94,10 @@ export default {
       }).catch(error => {
         console.error('Erro ao buscar dados:', error);
       });
+    },
+
+    saveFlag() {
+      localStorage.setItem('flagBaseDash', this.flagBaseDash);
     },
 
     scrollDown() {
@@ -145,9 +153,10 @@ export default {
                             type="checkbox"
                             size="sm"
                             v-model="flagBaseDash"
+                            @change="saveFlag"
                         >
                         <label class="form-check-label" style="position: relative ;right: 2px; top: -2px; letter-spacing: 0.5px;">
-                          <strong>{{ flagBaseDash === true ? 'Orçamento' : 'Nota Fiscal' }}</strong>
+                          <strong>{{ flagBaseDash === true ? 'Pedido' : 'Nota Fiscal' }}</strong>
                         </label>
                       </p>
 
@@ -175,7 +184,7 @@ export default {
                       <!--Total de NF-->
                       <div class="btn-box animate-3" style="position: absolute ; left: 1.7ch">
                         <h4 class="badge badge-soft-warnig font-size-32" style="padding: 3px 100px; margin-left: -20px; margin-right: 20px"> DIA </h4> <br>
-                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
+                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">{{ flagBaseDash === false ? "Notas Emitidas:" : "Pedidos Emitidos:" }}</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
                           <h4 class="font-size-70" style="color: #d39d02; margin-right: -21.6ch; margin-top: 35px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitDia) : formatInteger(totalPedDia)}}
                             <p style="color: #d39d02; font-size: 36px; margin-left: 260px; margin-top: -74px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
@@ -315,7 +324,7 @@ export default {
                       <!--Total de NF-->
                       <div class="btn-box animate-3" style="position: absolute ; left: 1.7ch">
                         <h4 class="badge badge-soft-info font-size-32" style="padding: 3px 68px; margin-left: -20px; margin-right: 20px"> SEMANA </h4> <br>
-                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
+                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">{{ flagBaseDash === false ? "Notas Emitidas:" : "Pedidos Emitidos:" }}</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
                           <h4 class="font-size-70" style="color: #0c5460;; margin-right: -21.6ch; margin-top: 30px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitSem) : formatInteger(totalPedSem)}}
                             <p style="color: #0c5460; font-size: 36px; margin-left: 260px; margin-top: -75px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
@@ -458,7 +467,7 @@ export default {
                       <!--Total de NF-->
                       <div class="btn-box animate-3" style="position: absolute ; left: 1.7ch">
                         <h4 class="badge badge-soft-success font-size-32" style="padding: 3px 95px; margin-left: -20px; margin-right: 20px"> MÊS </h4> <br>
-                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">Notas Emitidas:</p>
+                        <p class="font-size-20" style="color: #333; margin-top: 10px; margin-left: -150px">{{ flagBaseDash === false ? "Notas Emitidas:" : "Pedidos Emitidos:" }}</p>
                         <div class="col-12" style="position: absolute; margin-top: -75px; margin-left: -30ch; text-align: center">
                           <h4 class="font-size-70" style="color: #155724;; margin-right: -21.6ch; margin-top: 30px">{{ flagBaseDash === false ? formatInteger(listaResultados.totalEmitMes) :  formatInteger(totalPedMes)}}
                             <p style="color: #155724; font-size: 36px; margin-left: 260px; margin-top: -74px">{{ flagBaseDash === false ? "NF's" : "Ped's" }}</p>
