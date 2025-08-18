@@ -1,7 +1,7 @@
 <template>
     <ul class="navigation">
-        <div class="top-left">
-                <!-- Info List -->
+<!--        <div class="top-left">
+                &lt;!&ndash; Info List &ndash;&gt;
                 <ul class="list-style-one">
                     <li><i class="fa fa-map-marker-alt"></i> Shopping Monserrat, Serra - ES</li>
                     <li><i class="fa fa-clock"></i> Seg - Sex: 8am - 18pm</li>
@@ -9,7 +9,7 @@
                         <NuxtLink to="tel:+92(8800)87890">27.3020-7888</NuxtLink>
                     </li>
                 </ul>
-            </div>
+            </div>-->
       <!--<li style="margin-right: 0ch; margin-left: -75ch">
         <NuxtLink to="" disabled="disabled">Home</NuxtLink>
       </li>

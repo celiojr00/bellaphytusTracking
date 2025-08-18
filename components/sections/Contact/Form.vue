@@ -67,10 +67,11 @@
                           </h6>
                         </NuxtLink>
                       </div>
-<!--                      <p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
+                      <!--<p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
                         <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong>
                         R$ {{ formatDecimal(nota.valorliq) }}
-                      </p>--><br>
+                      </p>-->
+                      <br>
                     </div>
                     <div>
                       <span style="font-size: 16px; color: #6a6969;"><strong style="color: #434242"> Nome: </strong>
@@ -89,13 +90,24 @@
                     </div>
                     <div class="d-flex" style=" color: #333;">
                       <div>
-                        <p style="font-size: 13px; color: #6a6969;"><strong style="color: #434242"> Dt. Emissão: </strong>
+                        <p style="font-size: 13px; color: #6a6969;">
+                          <strong style="color: #434242"> Dt. Emissão: </strong>
+                          <br>
                           {{ formatDateTime(nota.dtemissao) }}
                         </p>
                       </div>
                       <div style=" margin-left: 3ch;">
-                        <p style="font-size: 13px; color: #6a6969;;"><strong style="color: #434242"> Dt. Ult.Status: </strong>
+                        <p style="font-size: 13px; color: #6a6969;;">
+                          <strong style="color: #434242"> Dt. Ult.Status: </strong>
+                          <br>
                           {{ formatDateTime(nota.dtultocor)}}
+                        </p>
+                      </div>
+		                  <div style=" margin-left: 3ch;">
+                        <p style="font-size: 13px; color: #6a6969;">
+                          <strong style="color: #434242"> Dt. Prev. Entrega: </strong>
+                          <br>
+                          {{ nota.dtpreventr !== null ? formatDate(nota.dtpreventr) : 'Sem previsão'}}
                         </p>
                       </div>
                     </div>
@@ -470,6 +482,13 @@ export default {
       var date = new Date(value);
       let dateTime = moment(date).format(format);
       // console.log(dateTime1)
+      return dateTime
+    },
+
+    formatDate(value) {
+      const format = "DD/MM/YYYY"
+      var date = new Date(value);
+      let dateTime = moment(date).format(format);
       return dateTime
     },
 
