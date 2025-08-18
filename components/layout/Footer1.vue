@@ -49,11 +49,6 @@
               </div>
             </div>
           </div>
-
-          <div>
-            <NuxtLink to="https://econocargo.com.br/" target="_blank"  class="theme-btn btn-style-one hvr-light small"><span
-                class="btn-title">Sobre nós</span></NuxtLink>
-          </div>
         </div>
       </div>
     </div>

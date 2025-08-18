@@ -28,20 +28,31 @@
                   </div>
                 </div>
 
-                <h6 class="title animate-3" style="font-size: 30px">
-                  <span class="colored "> Status: </span> <br>
-                  <span class="font-size-16" style="letter-spacing: 1px;"> Data de Emissão:  {{ dataEmissao }}</span>
-                  <br> {{ statusEntrega }} <br> <br>
-                  <span class="font-size-16" style="letter-spacing: 1px;"> Previsão de Entrega:  {{ dataPrev }}</span> <br>
-                  <span class="font-size-24" style="letter-spacing: 1px;"> {{ descricaoMaxSeq }} </span>
-                </h6>
+                <div>
+                  <h1 class="text-white">
+                    Tracking Externo
+                  </h1>
+                </div>
                 <!--<span class="font-size-14" style="font-size: 18px; color: #fff"> {{ descricaoMaxSeq }} </span>-->
 
                 <br> <br>
 
-                <div class="btn-box animate-4">
-                  <button @click="scrollDown" class="theme-btn btn-style-one alternate" style="font-size: 12px; padding: 5px 10px;"><span
-                      class="btn-title">Mais Detalhes</span></button>
+                <div class="btn-box animate-4 d-flex gap-5 mt-5">
+                  <button
+                      @click="$router.push('/track-nota')"
+                      class="theme-btn btn-style-one alternate"
+                      style="font-size: 18px; padding: 22px 40px; min-width: 150px;"
+                  >
+                    <span class="btn-title">Tracking</span>
+                  </button>
+
+                  <button
+                      @click="$router.push('/dashboard')"
+                      class="theme-btn btn-style-one alternate"
+                      style="font-size: 18px; padding: 22px 40px; min-width: 150px;"
+                  >
+                    <span class="btn-title">Dashboard</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -157,11 +168,6 @@ export default {
 
 
   methods: {
-
-    scrollDown(){
-      console.log('scrollDown')
-      this.$refs.targetRef.scrollIntoView({ behavior: 'smooth', block: "center" });
-    }
   },
 }
 </script>
