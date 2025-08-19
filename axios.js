@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://lynv.econocargo.net/',
+    baseURL: 'https://macrolub.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 4|YfPhBf4HSo6VmHHGYTfbCG05Z0Ts0iozZBZ5CLNJ'
+        'Authorization': 'Bearer 75|C36jiKZRN0aJ5HGEwaHD43BYTlpKLFA9RNJokJaa'
 
 
     },
