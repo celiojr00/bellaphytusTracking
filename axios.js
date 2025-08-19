@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://theramartbrasil.ddns.net/',
+    baseURL: 'https://vitascience.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 7|NY3vHVnwj1ow5HzCHSnUyhHcp8FeCKBrIEdyJw9w'
+        'Authorization': 'Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF'
 
 
     },
