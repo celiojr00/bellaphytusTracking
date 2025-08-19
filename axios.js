@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://ducoprint.econocargo.net/',
+    baseURL: 'https://fisioquantic.econocargo.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 4|dmfpe7NfGZPg3nne2kfe8tYPFUl26c3cK63hY2X9'
+        'Authorization': 'Bearer 12|EbrbbHrTaL6khtvObXBtD3zRDkVyUJKsFT7k5iDZ'
 
 
     },
