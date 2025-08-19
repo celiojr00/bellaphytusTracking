@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://konicaeconopro.ddns.net/',
+    baseURL: 'https://lelloprint.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 13|FyTEUEQeWITce7HwTx1QKEh6YxK9Hy6ulgRxffDN'
+        'Authorization': 'Bearer 37|nIJALPhiiCorCYweIo6a5u5IydiST83sDdfYdd0r'
 
 
     },
