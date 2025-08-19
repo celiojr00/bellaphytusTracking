@@ -1,4 +1,5 @@
 .vercel
 .nuxt
-.axios.js
 node_modules
+axios.js
+deployTrackingAutomacao.py
