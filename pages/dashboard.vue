@@ -1,10 +1,3 @@
-<!--<template>-->
-<!--  <SectionsHome2Section1 :lista-resultados="listaResultados" :nota-data="notaData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao" :data-Prev="dataPrev" :count-Down="countDown"/>-->
-<!--</template>-->
-<!--<script setup lang="ts">-->
-<!--import {Swiper, SwiperSlide} from "swiper/swiper-vue";-->
-<!--</script>-->
-
 <script>
 import api from "../axios.js";
 import {Autoplay, Navigation, Pagination} from "swiper/modules"
@@ -113,19 +106,14 @@ export default {
       <!-- Slide Item -->
       <swiper-slide class="slide-item">
         <div class="bg-image" style="margin-top: -750px; background-image: url(/images/main-slider/3.jpg);"></div>
-        <div class="auto-container" style="margin-top: -40px;">
+        <div class="auto-container">
           <div class="row">
             <div class="content-column col-lg-7 col-md-12 col-sm-12">
               <div class="content-box">
                 <!--Logo EconoPro no topo-->
-                <!--                <div class="btn-box animate-3" style="position:absolute; top: 4ch; right: 66ch">
-                    <div class="logo">
-                      <img src="/images/logo_econo_pro.png" style="max-width: 230px; margin-right: 7ch;" alt="">
-                    </div>
-                  </div>-->
 
                 <!--Logo Dashboard Produção no topo-->
-                <div style=" margin-left: -41ch; margin-top: -10ch">
+                <div style=" margin-left: -41ch; margin-top: -13ch">
                   <h6 class="title animate-3" style="right: -90px; top: -84px">
                     <span class="colored" style="font-size: 38px"> Dashboard</span>
                     <span class="badge badge-soft-white overlay-text" style="top: -12px; padding: 5px; right: -190px"> Produção</span>
@@ -136,7 +124,7 @@ export default {
           </div>
 
           <!--Painel de Pordução-->
-          <div style="margin-top: -17ch; margin-left: 46ch; position: relative;">
+          <div style="margin-top: -18ch; margin-left: 46ch; position: relative;">
             <div>
               <div class="btn-box animate-4">
 
@@ -188,37 +176,6 @@ export default {
                             <h4 style="color: #d39d02; font-size: 70px; margin-top: -34px;">{{formatInteger(listaResultados.nfConfDia)}}</h4>
                           </div>
                         </div>
-
-                        <!-- Pedidos Layout antigo -->
-                        <!--                        <div class="separator-line-warnig" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoAssocDia)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoEmbarDia)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #d39d02"></i>
-                          <div style="margin-top: 0ch">
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #d39d02; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaExpedDia)}}</h4>
-                          </div>
-                        </div>-->
-
                       </div>
                     </div>
                   </div>
@@ -328,36 +285,6 @@ export default {
                             <h4 style="color: #0c5460; font-size: 70px; margin-top: -34px;"> {{formatInteger(listaResultados.nfConfSem)}} </h4>
                           </div>
                         </div>
-
-                        <!-- Pedidos -->
-                        <!--                        <div class="separator-line-info" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaNaoAssocSem)}} </h4>
-                          </div>
-                        </div>
-
-                        <div  class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaNaoEmbarSem)}} </h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #0c5460"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #0c5460; font-size: 75px; margin-top: -34px;"> {{formatInteger(listaResultados.romaExpedSem)}} </h4>
-                          </div>
-                        </div>-->
                       </div>
                     </div>
                   </div>
@@ -472,35 +399,6 @@ export default {
                           </div>
                         </div>
 
-                        <!-- Pedidos -->
-                        <!--                        <div  class="separator-line-success" style="position: relative; left: 5.3ch"></div>
-
-                        <div class="col-2" style="position: absolute; left: 47.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-courier" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> A conferir </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoAssocMes)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute ;left: 57.5ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-box-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Conferido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaNaoEmbarMes)}}</h4>
-                          </div>
-                        </div>
-
-                        <div class="col-2" style="position: absolute; left: 68ch; margin-top: 0.3ch">
-                          <i class="icon flaticon-delivery-insurance-3" style="font-size: 3ch; margin-top: 20px; color: #155724"></i>
-                          <div>
-                            <h4 style="color: #222; font-size: 18.5px; margin-top: -6px;"> Expedido </h4>
-                            <p class="title" style="color: #111; font-size: 12px; margin-top: -22px;"> <br> </p>
-                            <h4 style="color: #155724; font-size: 75px; margin-top: -34px;">{{formatInteger(listaResultados.romaExpedMes)}}</h4>
-                          </div>
-                        </div>-->
                       </div>
                     </div>
                   </div>
@@ -563,47 +461,9 @@ export default {
                 </div>
               </div>
 
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
               <!--MODELO ANTIGO-->
-              <!--<div class="features-column col-lg-6 col-md-12" style="margin-bottom: 0ch; width: 48ch; height: 38ch">
-                  <div class="row">
-                    <div class="d-flex" style="margin-left: -4ch">
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 1ch;">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-courier" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -6px;position: absolute;"> NF Em Aberto </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -2px">(Não Associadas) </p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -29px; text-align: center">
-                            <h4 class="color2 font-size-78">128</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 1ch">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-box-3" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -17px;position: absolute;"> NF Em Produção </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -5px"><br><br><br><br></p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -32px; text-align: center">
-                            <h4 class="color2 font-size-78">46</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="feature-block-three custom-feature-block" style="margin-right: 0ch">
-                        <div class="inner custom-inner" style="background-color: #fff">
-                          <i class="icon flaticon-delivery-insurance-3" style=" margin-top: -10px;"></i>
-                          <br><br><br>
-                          <h4 class="title" style="margin-top: -100px; margin-left: -4px;position: absolute;"> NF Conferida </h4>
-                          <p class="title" style="color: #111; font-size: 12px; position: absolute; margin-top: -80px; margin-left: -5px"><br><br><br><br></p>
-                          <div class="col-12" style="position: absolute; margin-top: -80px; margin-left: -34px; text-align: center">
-                            <h4 class="color2 font-size-78">82</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>-->
+
             </div>
           </div>
 

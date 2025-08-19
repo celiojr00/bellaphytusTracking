@@ -1,21 +1,5 @@
 <template>
   <SectionsHome1Section1 :nota-data="notaData" :status-entrega="statusEntrega" :descricao-Max-Seq="descricaoMaxSeq" :data-Emissao="dataEmissao" :data-Prev="dataPrev"/>
-  <SectionsHome1Section2 :nota-status-data="notaStatusData"/>
-  <SectionsHome1Section3/>
-  <SectionsHome1Section4/>
-  <SectionsHome1Section5 :chave-nota="chaveNota"/>
-  <SectionsHome1Section6/>
-  <SectionsHome1Section7/>
-  <SectionsHome1Section8/>
-  <!--    <SectionsHome1Section9/>-->
-  <!--    <SectionsHome1Section10/>-->
-  <!--    <SectionsHome1Section11/>-->
-  <!--    <SectionsHome1Section12/>-->
-  <!--    <SectionsHome1Section13/>-->
-  <!--    <SectionsHome1Section14/>-->
-  <!--    <SectionsHome1Section15/>-->
-  <SectionsContactForm :nota-status-data="notaStatusData" :status-entrega="statusEntrega" :data-Emissao="dataEmissao"/>
-  <SectionsHome1Section16/>
 </template>
 <script setup lang="ts">
 </script>
