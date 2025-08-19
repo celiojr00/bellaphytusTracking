@@ -395,7 +395,7 @@ export default {
       console.log('testando conexão api...')
       api.get(`api/testarapi`).then((res) => console.log(res))
 
-      if (this.cnpj !== '') {
+      if ((this.cnpj.trim() !== '' || this.cnpj) && (this.numnota.trim() !== '' || this.numnota)) {
         this.updating = true
         api.get(`api/consnfsabe`, {
           params: {
@@ -467,7 +467,7 @@ export default {
       } else {
         $toast.open({
           type: "info",
-          message: '<span class="text-white">Favor informar número de CNPJ para pesquisar.</span>',
+          message: '<span class="text-white">Favor informar CNPJ e número da nota fiscal para pesquisar.</span>',
           duration: 3000
         });
       }
