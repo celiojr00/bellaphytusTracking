@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="mb-3">
-                  <span style="color: black">Número Nota Fiscal</span>
+                  <span style="color: black">Número Nota Fiscal <small style= "color: red">campo obrigatório*</small></span>
                   <input name="numnf"
                          v-model="numnota"
                          v-on:keyup.enter="pesqNota"
