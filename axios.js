@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://vitascience.ddns.net/',
+    baseURL: 'https://qualiflex02.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF'
+        'Authorization': 'Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD'
 
 
     },
