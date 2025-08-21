@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://cachear.econocargo.net/',
+    baseURL: 'https://celeirobike.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 12|c7fOOIGE0VrIeJWFISMotT4LOvPEZt3EQCzCq3Ru'
+        'Authorization': 'Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt'
 
 
     },
