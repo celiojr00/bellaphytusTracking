@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://qualiflex02.ddns.net/',
+    baseURL: 'https://rcradioadores.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 49|wfATErRpX4XkiVU6dj18KzqZAQnPjO50JjgTXnhD'
+        'Authorization': 'Bearer 13|WCXAQd4CeRpuciMgWQ6YuPcMNYI2K7LSba3s7hRK'
 
 
     },
