@@ -2,6 +2,7 @@
 import api from "../axios.js";
 import {Autoplay, Navigation, Pagination} from "swiper/modules"
 import {Swiper, SwiperSlide} from "swiper/vue"
+import moment from 'moment';
 
 export default {
   components: {
@@ -133,12 +134,14 @@ export default {
       <!-- Slide Item -->
       <swiper-slide class="slide-item">
         <div class="bg-image" style="margin-top: -750px; background-image: url(/images/main-slider/3.jpg);"></div>
-        <div class="auto-container" style="margin-top: -40px;">
+        <div class="auto-container">
           <div class="row">
             <div class="content-column col-lg-7 col-md-12 col-sm-12">
               <div class="content-box">
+                <!--Logo EconoPro no topo-->
+
                 <!--Logo Dashboard Produção no topo-->
-                <div style=" margin-left: -41ch; margin-top: -10ch">
+                <div style=" margin-left: -41ch; margin-top: -13ch">
                   <h6 class="title animate-3" style="right: -90px; top: -84px">
                     <span class="colored" style="font-size: 38px"> Dashboard</span>
 
@@ -168,7 +171,7 @@ export default {
           </div>
 
           <!--Painel de Pordução-->
-          <div style="margin-top: -17ch; margin-left: 46ch; position: relative;">
+          <div style="margin-top: -18ch; margin-left: 46ch; position: relative;">
             <div>
               <div class="btn-box animate-4">
 
@@ -251,7 +254,6 @@ export default {
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
 
@@ -595,7 +597,10 @@ export default {
                   </div>
                 </div>
               </div>
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <!--MODELO ANTIGO-->
+
             </div>
           </div>
 
@@ -608,6 +613,16 @@ export default {
   </section>
 </template>
 <style scoped>
+
+
+.custom-feature-block {
+  width: 160px;
+  height: auto;
+}
+
+.custom-inner {
+  padding: 30px;
+}
 
 .colored {
   position: absolute;
@@ -658,6 +673,40 @@ export default {
 .overlay-text {
   position: relative;
   z-index: 1;
+}
+
+.divider {
+  margin-left: 40px;
+  border-left: 2px solid #ccc;
+  padding-left: 40px;
+  margin-top: 16px;
+}
+
+.separator-line-success {
+
+  border-left: 1.8px solid #155724;
+  padding-left: 65px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+}
+
+.separator-line-info {
+
+  border-left: 1.8px solid #0c5460;
+  padding-left: 65px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+}
+
+.separator-line-warnig {
+
+  border-left: 1.8px solid #856404;
+  padding-left: 65px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
 }
 
 </style>

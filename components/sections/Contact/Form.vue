@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="mb-3">
-                  <span style="color: black">Número Nota Fiscal</span>
+                  <span style="color: black">Número Nota Fiscal <small style= "color: red">campo obrigatório*</small></span>
                   <input name="numnf"
                          v-model="numnota"
                          v-on:keyup.enter="pesqNota"
@@ -400,7 +400,7 @@ export default {
       console.log('testando conexão api...')
       api.get(`api/testarapi`).then((res) => console.log(res))
 
-      if (this.cnpj !== '') {
+      if ((this.cnpj.trim() !== '' || this.cnpj) && (this.numnota.trim() !== '' || this.numnota)) {
         this.updating = true
         api.get(`api/consnfsabe`, {
           params: {
@@ -476,7 +476,7 @@ export default {
       } else {
         $toast.open({
           type: "info",
-          message: '<span class="text-white">Favor informar número de CNPJ para pesquisar.</span>',
+          message: '<span class="text-white">Favor informar CNPJ e número da nota fiscal para pesquisar.</span>',
           duration: 3000
         });
       }
