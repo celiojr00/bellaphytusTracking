@@ -24,7 +24,7 @@
 
 
               <div class="content-box">
-                <div class="btn-box animate-3" style="position:absolute; top: -20ch; right: 80ch">
+                <div class="btn-box animate-3" style="position:absolute; top: -20ch; right: 70ch">
                   <div class="logo">
                     <NuxtLink @click="$router.push('/track-nota')">
                       <img :src="blobUrlWhite" alt height="60" style="max-width: 250px; position: relative; left: 3ch; margin-top: 21ch;" v-if="blobUrlWhite"/>
@@ -39,7 +39,6 @@
                     Tracking Externo
                   </h1>
                 </div>
-                <!--<span class="font-size-14" style="font-size: 18px; color: #fff"> {{ descricaoMaxSeq }} </span>-->
 
                 <br> <br>
 
@@ -65,7 +64,7 @@
 
             <div style="margin-top: -17ch; margin-left: 46ch; position: relative;">
               <div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
               </div>
             </div>
           </div>

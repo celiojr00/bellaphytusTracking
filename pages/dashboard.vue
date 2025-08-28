@@ -314,7 +314,7 @@ export default {
                 </div>
 
                 <!-- Painel da Semana -->
-                <div style="position: relative; left: -55ch; top: -12px">
+                <div style="position: relative; left: -55ch; top: -18px">
                   <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 7.5ch; padding: 0.1ch 3.2ch"> Nota Fiscal </h4>
                   <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 34ch; padding: 0.1ch 3.2ch"> Romaneio </h4>
                   <h4 class="badge badge-soft-white" style="color: #0c5460; font-size: 32px; position: absolute; top: 11.05ch ;left: 56.7ch; padding: 0.1ch 3.4ch"> Volumes </h4>
@@ -457,7 +457,7 @@ export default {
                 </div>
 
                 <!-- Painel da Mensal -->
-                <div style="position: relative; left: -55ch">
+                <div style="position: relative; left: -55ch; top: -10px">
                   <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 7.5ch; padding: 0.1ch 3.2ch"> Nota Fiscal </h4>
                   <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 34ch; padding: 0.1ch 3.2ch"> Romaneio </h4>
                   <h4 class="badge badge-soft-white" style="color: #155724; font-size: 32px; position: absolute; top: 23.3ch ;left: 56.7ch; padding: 0.1ch 3.4ch"> Volumes </h4>
@@ -598,7 +598,7 @@ export default {
                 </div>
               </div>
 
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
               <!--MODELO ANTIGO-->
 
             </div>
