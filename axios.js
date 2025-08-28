@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://bellaphytus.ddns.net/',
+    baseURL: 'https://bluevix01.ddns.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx'
+        'Authorization': 'Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE'
 
 
     },
