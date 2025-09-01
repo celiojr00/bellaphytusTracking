@@ -6,13 +6,6 @@ export default defineNuxtConfig({
     alias: {
         "@": resolve(__dirname, "/"),
     },
-    app: {
-        head: {
-            meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
-            title: "EconoPro | Rastreamento",
-            script: []
-        }
-    },
     css: [
         'swiper/css',
         'swiper/css/navigation',
@@ -40,4 +33,15 @@ export default defineNuxtConfig({
             }
         ],
     ],
+
+    plugins: [
+        { src: '~/plugins/recaptcha.client.ts', mode: 'client' }
+    ],
+
+    app: {
+        head: {
+            meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
+            title: "EconoPro | Rastreamento",
+        }
+    }
 })
