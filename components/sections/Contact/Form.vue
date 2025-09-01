@@ -39,8 +39,14 @@
             <div class="mb-3 mt-5">
             </div>
             <div class="mb-3">
+              <vue-recaptcha2
+                  ref="recaptcha"
+                  :sitekey="'6LfcQbcrAAAAAIA6V6s3tECSunb6cXL3ypE7QIwa'"
+                  @verify="onCaptchaVerified"
+                  @expired="onCaptchaExpired"
+              ></vue-recaptcha2>
               <input name="form_botcheck" class="form-control" type="hidden" value="" />
-              <button type="button" @click="pesqNota" class="theme-btn btn-style-one me-3" data-loading-text="Please wait..."><span class="btn-title">Pesquisar</span></button>
+              <button type="button" @click="executeCaptcha" class="theme-btn btn-style-one me-3" data-loading-text="Please wait..."><span class="btn-title">Pesquisar</span></button>
               <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Limpar</span></button>
             </div>
           </form>
@@ -67,10 +73,6 @@
                           </h6>
                         </NuxtLink>
                       </div>
-                      <!--<p style="margin-left: 5ch; font-size: 16px; color: rgb(240, 109, 62)" class="col-xl-7">
-                        <strong style="color: rgb(240, 109, 62)"> Valor de Nota: </strong>
-                        R$ {{ formatDecimal(nota.valorliq) }}
-                      </p>-->
                       <br>
                     </div>
                     <div>
@@ -220,7 +222,6 @@
               <div v-else> Carregando ...</div>
               
               <br>
-<!--              <button @click="closeModal"> Fechar </button>-->
               
             </div>
               
@@ -261,6 +262,7 @@ import moment from 'moment'
 import api from "../../../axios.js";
 import {useToast} from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+import {defineNuxtPlugin} from "#app";
 
 const $toast = useToast();
 
@@ -310,7 +312,6 @@ export default {
       try{
         api.get(`api/consnfabe`,{
           params: {
-          //chave: this.chaveNota,
           idmov: id,
           }
         }).then((res) => {
@@ -326,28 +327,9 @@ export default {
             if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
               this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
 
-              /*if (this.notaStatusData.length > 0) {
-                const maxSeqItem = this.notaStatusData[0];
-
-                let ultdescricao = maxSeqItem.descricao;
-                let lineBreakPosition = ultdescricao.indexOf('\n');
-
-                if (lineBreakPosition !== -1) {
-                  this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
-                      '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-                } else {
-                  this.descricaoMaxSeq = ultdescricao +
-                      '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-                }
-
-                //  this.descricaoMaxSeq = maxSeqItem.descricao;
-
-              } else {
-                this.descricaoMaxSeq = "Não encontrado.";
-              }*/
 
               const item = this.notaData;
-              // const maxSeqItem = this.notaStatusData[0];
+
               this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
               if(item.dtpreventr === 'SEM PREVISAO'){
                 this.dataPrev = item.dtpreventr;
@@ -394,7 +376,36 @@ export default {
       });
     },
 
-    pesqNota(){
+    executeCaptcha() {
+      if ((this.cnpj.trim() !== '' || this.cnpj) && (this.numnota.trim() !== '' || this.numnota)) {
+        this.$refs.recaptcha.execute();
+      } else {
+        this.$toast.open({
+          type: "info",
+          message: '<span class="text-white">Favor informar CNPJ e número da nota fiscal para pesquisar.</span>',
+          duration: 3000
+        });
+      }
+    },
+
+    onCaptchaVerified(response) {
+      console.log('reCAPTCHA verificado, token:', response);
+      this.pesqNota(response);
+      this.$refs.recaptcha.reset();
+    },
+
+    onCaptchaExpired() {
+      console.log('reCAPTCHA expirou, por favor, tente novamente.');
+      this.$refs.recaptcha.reset();
+      this.$toast.open({
+        type: "error",
+        message: '<span class="text-white">reCAPTCHA expirou. Por favor, tente novamente.</span>',
+        duration: 3000
+      });
+    },
+
+    pesqNota(token){
+      this.updating = true;
       console.log('pesqNota')
 
       console.log('testando conexão api...')
@@ -405,7 +416,8 @@ export default {
         api.get(`api/consnfsabe`, {
           params: {
             numnota: this.numnota,
-            cnpj: this.cnpj
+            cnpj: this.cnpj,
+            token: token
           }
         }).then((res) => {
           console.log('then axios rastreio nfsAbe')
@@ -431,24 +443,6 @@ export default {
             if (this.notaData && this.notaData.obsentr && this.notaData.obsentr !== '') {
               this.statusEntrega = this.notaData.obsentr.substring(0, 40) + '...';
 
-              // if (this.notaStatusData.length > 0) {
-              //   const maxSeqItem = this.notaStatusData[0];
-              //
-              //   let ultdescricao = maxSeqItem.descricao;
-              //   let lineBreakPosition = ultdescricao.indexOf('\n');
-              //
-              //   if (lineBreakPosition !== -1) {
-              //     this.descricaoMaxSeq = ultdescricao.substring(0, lineBreakPosition) +
-              //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-              //   } else {
-              //     this.descricaoMaxSeq = ultdescricao +
-              //         '\n' + moment(maxSeqItem.data).format('DD/MM/YYYY', 'HH:mm:ss');
-              //   }
-              //
-              // } else {
-              //   this.descricaoMaxSeq = "Não encontrado.";
-              // }
-
               const item = this.notaData;
               this.dataEmissao = moment(item.dtemissao).format('DD/MM/YYYY');
               this.dataPrev = moment(item.dtpreventr).format('DD/MM/YYYY');
@@ -472,25 +466,22 @@ export default {
           }
 
         })
-
-      } else {
-        $toast.open({
-          type: "info",
-          message: '<span class="text-white">Favor informar CNPJ e número da nota fiscal para pesquisar.</span>',
-          duration: 3000
+        .catch(error => {
+          console.error('Erro na requisição da API:', error);
+          this.updating = false;
+          this.$toast.open({
+            type: "error",
+            message: '<span class="text-white">Falha na validação do reCAPTCHA ou erro na pesquisa. Por favor, tente novamente.</span>',
+            duration: 5000
+          });
         });
       }
-
     },
 
     formatDateTime(value) {
-      // console.log('value formatDate')
-      // console.log(value)
-      // console.log(moment())
       const format = "DD/MM/YYYY HH:mm"
       var date = new Date(value);
       let dateTime = moment(date).format(format);
-      // console.log(dateTime1)
       return dateTime
     },
 
@@ -499,17 +490,6 @@ export default {
       var date = new Date(value);
       let dateTime = moment(date).format(format);
       return dateTime
-    },
-
-    formatDecimal(value) {
-      // console.log('format_value')
-      // console.log(value)
-      // console.log(typeof value)
-      if(value){
-        let value_n = parseFloat(value)
-        return value_n.toLocaleString('pt-BR', {style: 'decimal', minimumFractionDigits: 2});
-      }
-      return 0.00;
     },
 
     formatInteger(value) {
