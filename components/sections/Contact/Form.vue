@@ -378,6 +378,7 @@ export default {
     },
 
     onCaptchaVerified(response) {
+      console.log("onCaptchaVerified")
       console.log('reCAPTCHA verificado, token:', response);
       this.tokenRecaptcha = response
       this.$refs.recaptcha.reset();
