@@ -284,6 +284,7 @@ export default {
       chaveNota: null,
       numnota: '',
       cnpj: '',
+      tokenRecaptcha: null
     }
   },
 
@@ -378,7 +379,8 @@ export default {
 
     onCaptchaVerified(response) {
       console.log('reCAPTCHA verificado, token:', response);
-      this.pesqNota(response);
+      this.tokenRecaptcha = response
+      this.pesqNota();
       this.$refs.recaptcha.reset();
     },
 
@@ -392,7 +394,7 @@ export default {
       });
     },
 
-    pesqNota(token){
+    pesqNota(){
       this.updating = true;
       console.log('pesqNota')
 
@@ -401,11 +403,12 @@ export default {
 
       if ((this.cnpj.trim() !== '' || this.cnpj) && (this.numnota.trim() !== '' || this.numnota)) {
         this.updating = true
+        console.log('get consnfsabe...')
         api.get(`api/consnfsabe`, {
           params: {
             numnota: this.numnota,
             cnpj: this.cnpj,
-            token: token
+            tokenRecaptcha: this.tokenRecaptcha
           }
         }).then((res) => {
           console.log('then axios rastreio nfsAbe')
