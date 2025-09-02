@@ -46,7 +46,7 @@
                   @expired="onCaptchaExpired"
               ></vue-recaptcha2>
               <input name="form_botcheck" class="form-control" type="hidden" value="" />
-              <button type="button" class="theme-btn btn-style-one me-3" @click="pesqNota" data-loading-text="Carregando..."><span class="btn-title">Pesquisar</span></button>
+              <button type="button" class="theme-btn btn-style-one me-3 mt-5" @click="pesqNota" data-loading-text="Carregando..."><span class="btn-title">Pesquisar</span></button>
               <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Limpar</span></button>
             </div>
           </form>
@@ -380,7 +380,6 @@ export default {
     onCaptchaVerified(response) {
       console.log('reCAPTCHA verificado, token:', response);
       this.tokenRecaptcha = response
-      this.pesqNota();
       this.$refs.recaptcha.reset();
     },
 
