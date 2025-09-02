@@ -378,9 +378,8 @@ export default {
     },
 
     onCaptchaVerified(response) {
-      console.log('reCAPTCHA verificado, token:', response);
+      // console.log('reCAPTCHA verificado, token:', response);
       this.tokenRecaptcha = response
-      this.$refs.recaptcha.reset();
     },
 
     onCaptchaExpired() {
@@ -412,6 +411,8 @@ export default {
         }).then((res) => {
           console.log('then axios rastreio nfsAbe')
           console.log(res.data)
+
+          this.$refs.recaptcha.reset();
 
           if(res.data.length > 0) {
             this.dataListNotas = res.data[0]
