@@ -24,27 +24,27 @@ clients = [
 #     {
 #         "remote": "arezesTracking",
 #         "baseURL": "https://arezes.econocargo.net",
-#         "auth": "8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N"
+#         "auth": "Bearer 8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N"
 #     },
 #     {
 #         "remote": "artmentoTracking",
 #         "baseURL": "https://artmento.econocargo.net/",
-#         "auth": "4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
+#         "auth": "Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
 #     },
 #     {
 #         "remote": "asclepharmaTracking",
 #         "baseURL": "https://asclepharma.econocargo.net/",
-#         "auth": "3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
+#         "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
 #     },
     {
         "remote": "atacadosaopauloTracking",
         "baseURL": "https://atacadosaopaulo.ddns.net/",
-        "auth": "23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
+        "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
     },
 #     {
 #         "remote": "bapautomotivaTracking",
 #         "baseURL": "https://bapautomotiva.econocargo.net/",
-#         "auth": "26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
+#         "auth": "Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
 #     },
 #     {
 #         "remote": "bascelTracking",
