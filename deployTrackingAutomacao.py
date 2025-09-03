@@ -2,7 +2,7 @@ import os
 import subprocess
 
 # Arquivo JS que será alterado
-API_FILE = "./api.js"
+API_FILE = "./axios.js"
 
 # Lista de clientes
 clients = [
@@ -36,11 +36,11 @@ clients = [
 #         "baseURL": "https://asclepharma.econocargo.net/",
 #         "auth": "3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
 #     },
-#     {
-#         "remote": "atacadosaopauloTracking",
-#         "baseURL": "https://atacadosaopaulo.ddns.net/",
-#         "auth": "23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
-#     },
+    {
+        "remote": "atacadosaopauloTracking",
+        "baseURL": "https://atacadosaopaulo.ddns.net/",
+        "auth": "23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
+    },
 #     {
 #         "remote": "bapautomotivaTracking",
 #         "baseURL": "https://bapautomotiva.econocargo.net/",
@@ -271,11 +271,11 @@ clients = [
 #         "baseURL": "https://vitascience.ddns.net/",
 #         "auth": "Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF"
 #     },
-      {
-          "remote": "titaniumbrTracking",
-          "baseURL": "https://titaniumbr.econocargo.net/",
-          "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
-      },
+    {
+        "remote": "titaniumbrTracking",
+        "baseURL": "https://titaniumbr.econocargo.net/",
+        "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
+    },
 
 ]
 
@@ -311,7 +311,7 @@ if __name__ == "__main__":
     for client in clients:
         print(f"\nAtualizando {client['remote']} - dns: {client['baseURL']} - token: {client['auth']}")
         update_api_file(client["baseURL"], client["auth"])
-        #git_push(client["remote"])
+        git_push(client["remote"])
         print(f"Push realizado para {client['remote']}")
         count += 1
     

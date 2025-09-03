@@ -41,7 +41,7 @@
             <div class="mb-3">
               <vue-recaptcha2
                   ref="recaptcha"
-                  :sitekey="'6LfcQbcrAAAAAIA6V6s3tECSunb6cXL3ypE7QIwa'"
+                  :sitekey="'6LfzrrwrAAAAAEF6DCnUSgchh7ZlujdunzqHFp3w'"
                   @verify="onCaptchaVerified"
                   @expired="onCaptchaExpired"
               ></vue-recaptcha2>

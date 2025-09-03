@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF'
+        'Authorization': '23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF'
 
 
     },
