@@ -36,11 +36,11 @@ clients = [
 #         "baseURL": "https://asclepharma.econocargo.net/",
 #         "auth": "3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
 #     },
-    {
-        "remote": "atacadosaopauloTracking",
-        "baseURL": "https://atacadosaopaulo.ddns.net/",
-        "auth": "23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
-    },
+#     {
+#         "remote": "atacadosaopauloTracking",
+#         "baseURL": "https://atacadosaopaulo.ddns.net/",
+#         "auth": "23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
+#     },
 #     {
 #         "remote": "bapautomotivaTracking",
 #         "baseURL": "https://bapautomotiva.econocargo.net/",
@@ -271,6 +271,12 @@ clients = [
 #         "baseURL": "https://vitascience.ddns.net/",
 #         "auth": "Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF"
 #     },
+      {
+          "remote": "titaniumbrTracking",
+          "baseURL": "https://titaniumbr.econocargo.net/",
+          "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
+      },
+
 ]
 
 
