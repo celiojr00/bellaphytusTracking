@@ -6,41 +6,41 @@ API_FILE = "./axios.js"
 
 # Lista de clientes
 clients = [
-#     {
-#         "remote": "3mkocosmeticosTracking",
-#         "baseURL": "https://3mko.econocargo.net/",
-#         "auth": "Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK"
-#     },
-#     {
-#         "remote": "airfreshTracking",
-#         "baseURL": "https://airfresh.econocargo.net/",
-#         "auth": "Bearer 11|WL6tUsnjBFToB7g0fJDHhSeDESRRlLkFYzAx9kRb"
-#     },
-#     {
-#         "remote": "arellTracking",
-#         "baseURL": "https://arellimpecom.ddns.net/",
-#         "auth": "Bearer 3|qAXrboOs14eUeL6B8WaAAdXvW6nMNGpwj6fXYlY4"
-#     },
-#     {
-#         "remote": "arezesTracking",
-#         "baseURL": "https://arezes.econocargo.net",
-#         "auth": "Bearer 8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N"
-#     },
-#     {
-#         "remote": "artmentoTracking",
-#         "baseURL": "https://artmento.econocargo.net/",
-#         "auth": "Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
-#     },
+    {
+        "remote": "3mkocosmeticosTracking",
+        "baseURL": "https://3mko.econocargo.net/",
+        "auth": "Bearer 28|eoB5kLDheF91QiO12LnyWq3go2Yy4WBIDdbXoVHK"
+    },
+    {
+        "remote": "airfreshTracking",
+        "baseURL": "https://airfresh.econocargo.net/",
+        "auth": "Bearer 11|WL6tUsnjBFToB7g0fJDHhSeDESRRlLkFYzAx9kRb"
+    },
+    {
+        "remote": "arellTracking",
+        "baseURL": "https://arellimpecom.ddns.net/",
+        "auth": "Bearer 3|qAXrboOs14eUeL6B8WaAAdXvW6nMNGpwj6fXYlY4"
+    },
+    {
+        "remote": "arezesTracking",
+        "baseURL": "https://arezes.econocargo.net",
+        "auth": "Bearer 8|ym38cTbQ0DVL8qZ1rBAV5vpf0BU7Z4lRwfEQ5z0N"
+    },
+    {
+        "remote": "artmentoTracking",
+        "baseURL": "https://artmento.econocargo.net/",
+        "auth": "Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
+    },
 #     {
 #         "remote": "asclepharmaTracking",
 #         "baseURL": "https://asclepharma.econocargo.net/",
 #         "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
 #     },
-    {
-        "remote": "atacadosaopauloTracking",
-        "baseURL": "https://atacadosaopaulo.ddns.net/",
-        "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
-    },
+#     {
+#         "remote": "atacadosaopauloTracking",
+#         "baseURL": "https://atacadosaopaulo.ddns.net/",
+#         "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
+#     },
 #     {
 #         "remote": "bapautomotivaTracking",
 #         "baseURL": "https://bapautomotiva.econocargo.net/",
@@ -271,11 +271,11 @@ clients = [
 #         "baseURL": "https://vitascience.ddns.net/",
 #         "auth": "Bearer 100|UEePRO6279oSO6S28YOMxbOLacWFUN5EebI02gPF"
 #     },
-    {
-        "remote": "titaniumbrTracking",
-        "baseURL": "https://titaniumbr.econocargo.net/",
-        "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
-    },
+#     {
+#         "remote": "titaniumbrTracking",
+#         "baseURL": "https://titaniumbr.econocargo.net/",
+#         "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
+#     },
 
 ]
 
