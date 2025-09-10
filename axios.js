@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://artmento.econocargo.net/',
+    baseURL: 'https://fhom.econocargo.net/',
 
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -11,7 +11,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
 
-        'Authorization': 'Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr'
+        'Authorization': 'Bearer 8|U310H1n6678MWI2UewLEp9wZ93huBNuWKQwv2u2M'
 
 
     },
