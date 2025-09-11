@@ -31,31 +31,31 @@ clients = [
 #         "baseURL": "https://artmento.econocargo.net/",
 #         "auth": "Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
 #     },
-#     {
-#         "remote": "asclepharmaTracking",
-#         "baseURL": "https://asclepharma.econocargo.net/",
-#         "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
-#     },
-#     {
-#         "remote": "atacadosaopauloTracking",
-#         "baseURL": "https://atacadosaopaulo.ddns.net/",
-#         "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
-#     },
-#     {
-#         "remote": "bapautomotivaTracking",
-#         "baseURL": "https://bapautomotiva.econocargo.net/",
-#         "auth": "Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
-#     },
-#     {
-#         "remote": "bascelTracking",
-#         "baseURL": "https://bascel.econocargo.net/",
-#         "auth": "Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA"
-#     },
-#     {
-#         "remote": "belfarTracking",
-#         "baseURL": "https://belfar.ddns.net/",
-#         "auth": "Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm"
-#     },
+    {
+        "remote": "asclepharmaTracking",
+        "baseURL": "https://asclepharma.econocargo.net/",
+        "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
+    },
+    {
+        "remote": "atacadosaopauloTracking",
+        "baseURL": "https://atacadosaopaulo.ddns.net/",
+        "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
+    },
+    {
+        "remote": "bapautomotivaTracking",
+        "baseURL": "https://bapautomotiva.econocargo.net/",
+        "auth": "Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
+    },
+    {
+        "remote": "bascelTracking",
+        "baseURL": "https://bascel.econocargo.net/",
+        "auth": "Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA"
+    },
+    {
+        "remote": "belfarTracking",
+        "baseURL": "https://belfar.ddns.net/",
+        "auth": "Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm"
+    },
 #     {
 #         "remote": "bellaphytusTracking",
 #         "baseURL": "https://bellaphytus.ddns.net/",
@@ -276,11 +276,11 @@ clients = [
 #         "baseURL": "https://titaniumbr.econocargo.net/",
 #         "auth": "Bearer 3|Y6VbkUrj9OVCizwUIDk1ic4gbw3FFrd3vhsvuhBf"
 #     },
-    {
-        "remote": "fhomTracking",
-        "baseURL": "https://fhom.econocargo.net/",
-        "auth": "Bearer 8|U310H1n6678MWI2UewLEp9wZ93huBNuWKQwv2u2M"
-    },
+#     {
+#         "remote": "fhomTracking",
+#         "baseURL": "https://fhom.econocargo.net/",
+#         "auth": "Bearer 8|U310H1n6678MWI2UewLEp9wZ93huBNuWKQwv2u2M"
+#     },
 
 ]
 
