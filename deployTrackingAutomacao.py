@@ -31,56 +31,56 @@ clients = [
 #         "baseURL": "https://artmento.econocargo.net/",
 #         "auth": "Bearer 4|pJhMNruWBjcCLvtq81aQBphwUJCUtHzoaO3Of1fr"
 #     },
-    {
-        "remote": "asclepharmaTracking",
-        "baseURL": "https://asclepharma.econocargo.net/",
-        "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
-    },
-    {
-        "remote": "atacadosaopauloTracking",
-        "baseURL": "https://atacadosaopaulo.ddns.net/",
-        "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
-    },
-    {
-        "remote": "bapautomotivaTracking",
-        "baseURL": "https://bapautomotiva.econocargo.net/",
-        "auth": "Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
-    },
-    {
-        "remote": "bascelTracking",
-        "baseURL": "https://bascel.econocargo.net/",
-        "auth": "Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA"
-    },
-    {
-        "remote": "belfarTracking",
-        "baseURL": "https://belfar.ddns.net/",
-        "auth": "Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm"
-    },
 #     {
-#         "remote": "bellaphytusTracking",
-#         "baseURL": "https://bellaphytus.ddns.net/",
-#         "auth": "Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx"
+#         "remote": "asclepharmaTracking",
+#         "baseURL": "https://asclepharma.econocargo.net/",
+#         "auth": "Bearer 3|Qxjjb010WSqNiPCGknNsHHptJBAHCSi9tKeCHE9M"
 #     },
 #     {
-#         "remote": "bluevixTracking",
-#         "baseURL": "https://bluevix01.ddns.net/",
-#         "auth": "Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE"
+#         "remote": "atacadosaopauloTracking",
+#         "baseURL": "https://atacadosaopaulo.ddns.net/",
+#         "auth": "Bearer 23|ID00DByqzZOBVVe112ZXr2nJvNewyroYCs3YTJvF"
 #     },
 #     {
-#         "remote": "brgfoodsTracking",
-#         "baseURL": "https://brgfoods.econocargo.net/",
-#         "auth": "Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P"
+#         "remote": "bapautomotivaTracking",
+#         "baseURL": "https://bapautomotiva.econocargo.net/",
+#         "auth": "Bearer 26|tDeBKJgqBUzBTNOnLpaYeQK2mCg7vpljDlwnMbLg"
 #     },
 #     {
-#         "remote": "cachearTracking",
-#         "baseURL": "https://cachear.econocargo.net/",
-#         "auth": "Bearer 12|c7fOOIGE0VrIeJWFISMotT4LOvPEZt3EQCzCq3Ru"
+#         "remote": "bascelTracking",
+#         "baseURL": "https://bascel.econocargo.net/",
+#         "auth": "Bearer 3|sP5w1VXmsmfV7uwYP5gu3UC0HItQMTFd6b4gO0aA"
 #     },
 #     {
-#         "remote": "celeirobikeTracking",
-#         "baseURL": "https://celeirobike.ddns.net/",
-#         "auth": "Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt"
+#         "remote": "belfarTracking",
+#         "baseURL": "https://belfar.ddns.net/",
+#         "auth": "Bearer 39|Utiey9x9qiPPlVDA3HLZza63lsnh6ZEWP0El8ZUm"
 #     },
+    {
+        "remote": "bellaphytusTracking",
+        "baseURL": "https://bellaphytus.ddns.net/",
+        "auth": "Bearer 8|qrxSU7Thh9Op8eWxingK7vyzjLE04kBGXerIOTGx"
+    },
+    {
+        "remote": "bluevixTracking",
+        "baseURL": "https://bluevix01.ddns.net/",
+        "auth": "Bearer 73|mZAIxTcPivg0TgWuyufRuNMlPrecRhOJhXpAU5NE"
+    },
+    {
+        "remote": "brgfoodsTracking",
+        "baseURL": "https://brgfoods.econocargo.net/",
+        "auth": "Bearer 7|iRklwdcS46hhOcd5nYDEKpneN8GCGI6mMh0wSz2P"
+    },
+    {
+        "remote": "cachearTracking",
+        "baseURL": "https://cachear.econocargo.net/",
+        "auth": "Bearer 12|c7fOOIGE0VrIeJWFISMotT4LOvPEZt3EQCzCq3Ru"
+    },
+    {
+        "remote": "celeirobikeTracking",
+        "baseURL": "https://celeirobike.ddns.net/",
+        "auth": "Bearer 62|8g6sZ0rUop6wsiwxWhzBaymJ4J9DkZtfDimtBykt"
+    },
 #     {
 #         "remote": "cgwbrasilTracking",
 #         "baseURL": "https://cgwbrasil.econocargo.net/",
